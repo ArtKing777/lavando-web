@@ -1,0 +1,10 @@
+cron:
+- description: admin cron job
+  url: /wsawirms/default/sendalert?isa=1
+  schedule: every 1 mins
+
+- description: users cron job
+  url: /wsawirms/default/sendalert?isa=2
+  schedule: every 1 mins
+
+  target: 4

@@ -1,0 +1,68 @@
+<div class="container w-full w-auto-xs" ng-controller="SignupFormController" ng-init="app.settings.container = false;">
+
+    <div class = "row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <div class="text-center" ng-include="$state.current.data.addonUrl + '/tpl/blocks/logo.html'"></div>
+            <div class="wrapper text-center">
+                This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="wrapper text-center">
+                <strong>Create a new NACFF Account</strong>
+            </div>
+            <form name="form" class="form-validation">
+                <div class="text-danger wrapper text-center" ng-show="signupError">
+                    {{signupError}}
+                </div>
+                <div class="list-group list-group-sm">
+                    <div class="list-group-item">
+                        <input type="text" placeholder="User Name" class="form-control no-border" ng-model="account.username" required>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="password" placeholder="Password" class="form-control no-border" ng-model="account.password" required>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="password" placeholder="Confirm Password" class="form-control no-border" ng-model="account.cpassword" required>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="text" placeholder="First Name" class="form-control no-border" ng-model="account.first_name" required>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="text" placeholder="Last Name" class="form-control no-border" ng-model="account.last_name" required>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="text" placeholder="Company Name" class="form-control no-border" ng-model="account.company_name" required>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="email" placeholder="Email" class="form-control no-border" ng-model="account.email" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="signUp()" ng-disabled='form.$invalid || inProcess'>{{signupText}}</button>
+
+                <div class="text-center m-t m-b"><a ui-sref="access.signin">Login</a></div>
+
+                <!--
+                <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">Forgot password?</a></div>
+                -->
+
+                <div class="line line-dashed"></div>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+    <!--
+    <a href class="navbar-brand block m-t">{{app.name}}</a>
+    -->
+    <div class="m-b-lg">
+
+
+
+    </div>
+    <div class="text-center" ng-include="$state.current.data.addonUrl + '/tpl/blocks/page_footer.html'"></div>
+</div>

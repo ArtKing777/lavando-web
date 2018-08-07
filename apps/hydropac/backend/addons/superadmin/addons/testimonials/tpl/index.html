@@ -1,0 +1,30 @@
+<div ng-controller="TestimonialsCtrl">
+    <div class="bg-light lter b-b wrapper-md">
+        <div class = "row m-n">
+        <div class="col-md-8 m-n"><h1 class="m-n font-thin h3">Testimonials</h1>
+        <small class="text-muted" ncy-breadcrumb></small>
+        </div>
+        <div class="col-md-4 m-n">
+            <button type="button" onclick = "history.back()" class="btn btn-sm btn-bg btn-default pull-right"><i class="fa fa-chevron-left"></i></button>
+        </div>
+    </div>
+
+    </div>
+    <div ui-view class="app-content-body fade-in-right">
+        <div class="container w-xxl w-auto-xs">
+          <div class="text-center m-b-lg">
+            <h1 class="text-shadow text-white"></h1>
+          </div>
+          <div class="list-group bg-info auto m-b-sm m-b-lg">
+            <a ui-sref="{{appConfig.wsModuleKey}}.users.list" class="list-group-item">
+              <i class="fa fa-chevron-right text-muted"></i>
+              <i class="fa fa-fw fa-list m-r-xs"></i> List Testimonials
+            </a>
+            <a ui-sref="{{authData.userType.tplkey}}.users.add" class="list-group-item">
+              <i class="fa fa-chevron-right text-muted"></i>
+              <i class="fa fa-fw fa-plus m-r-xs"></i> Add Testimonial
+            </a>
+          </div>
+        </div>
+    </div>
+</div>

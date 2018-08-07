@@ -1,0 +1,64 @@
+<div class = "row">
+	<div class="col-md-12">
+	
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.from_date.$invalid }">
+	    			<label>From Date</label>
+					<wp-datetimepicker name = "from_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenant_address.from_date" />
+				</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.to_date.$invalid }">
+	    			<label>To Date</label>
+					<wp-datetimepicker name = "to_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenant_address.to_date" />
+				</div>
+			</div>
+		</div>
+	
+		<div class="form-group"  ng-class="{'has-error': frmAdd.name.$invalid }">
+			<label>Address 1</label>
+			<input type="text" name = "address1" ng-model = "tenant_address.address1" class="form-control m-b-xs" placeholder="" required>
+			<input type="text" name = "address2" ng-model = "tenant_address.address2" class="form-control m-b-xs" placeholder="" required>
+			<input type="text" name = "address3" ng-model = "tenant_address.address3" class="form-control" placeholder="" required>
+       	</div>
+       		
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.city.$invalid }">
+	    			<label>City</label>
+					<input type="text" name = "city" ng-model = "tenant_address.city" class="form-control" placeholder="" required>
+				</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.state.$invalid }">
+	    			<label>County</label>
+					<input type="text" name = "state" ng-model = "tenant_address.state" class="form-control" placeholder="" required>
+				</div>
+			</div>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.country.$invalid }">
+	    			<label>Country</label>
+					<input type="text" name = "country" ng-model = "tenant_address.country" class="form-control" placeholder="" required>
+				</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.postcode.$invalid }">
+	    			<label>Postcode</label>
+					<input type="text" name = "postcode" ng-model = "tenant_address.postcode" class="form-control" placeholder="" required>
+				</div>
+			</div>
+		</div>
+		
+		<div class="form-group"  ng-class="{'has-error': frmAdd.remark.$invalid }">
+            <label>Remark</label>
+            <input type="text" name = "remark" ng-model = "tenant_address.remark" class="form-control" placeholder="" required>
+       	</div>		
+	</div>
+</div>

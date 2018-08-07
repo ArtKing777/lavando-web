@@ -1,0 +1,177 @@
+.bg-primary {
+
+    color: #f4f3f9;
+
+    background-color: #6254b2;
+
+}
+
+
+
+.w-lg {
+
+    width: 310px;
+
+}
+
+
+
+.bg-gray{ background:#ddd !important;}
+
+
+
+.bg-primary.itm {
+
+    color: #f4f3f9;
+
+    background-color: #16232d !important;
+
+}
+
+
+
+.wrapper-lg2 {
+
+    padding: 33px;
+
+}
+
+
+
+.abcd {
+
+    width:500px;
+
+}
+
+
+
+.ng-tree-search {
+
+    display:none;
+
+}
+
+
+
+.fontsmall{
+
+    font-size:12px;
+
+}
+
+.textrights{
+
+    float:right;
+
+}
+
+.h-full {
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+ul.nohover li a{ display: inline-block;}
+
+ul.nohover li a:hover{ background: transparent !important;}
+
+.padding_rt{ float: right; padding: 8px;}
+
+.dropdown-menu {
+min-width: 230px;
+}
+
+.table-white > tbody > tr > td,
+.table-white > tfoot > tr > td {
+  background:#fff;
+}
+
+.table-white > thead > tr > th {
+  background:#fff;
+}
+
+.bg-black .nav > li > a {
+  color: #fff;
+}
+
+.bg-black .nav > li > a:hover,
+.bg-black .nav > li > a:focus {
+  background-color: transparent;
+  color:#ff6600;
+}
+
+.bg-black .nav > li.active > a {
+  color:#ff6600;
+  background-color: transparent;
+}
+
+.i-checks input:checked + i {
+  border-color: #ff6600;
+}
+
+.i-checks input:checked + i:before {
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: #ff6600;
+}
+
+.btn-orange {
+  color: #ffffff !important;
+  background-color: #ff6600;
+  border-color: #ff6600;
+}
+
+.btn-orange:hover,
+.btn-orange:focus,
+.btn-orange:active,
+.btn-orange.active,
+.open .dropdown-toggle.btn-orange {
+  color: #ffffff !important;
+  background-color: #19a9d5;
+  border-color: #189ec8;
+}
+
+.btn-orange:active,
+.btn-orange.active,
+.open .dropdown-toggle.btn-orange {
+  background-image: none;
+}
+
+.btn-orange.disabled,
+.btn-orange[disabled],
+fieldset[disabled] .btn-orange,
+.btn-orange.disabled:hover,
+.btn-orange[disabled]:hover,
+fieldset[disabled] .btn-orange:hover,
+.btn-orange.disabled:focus,
+.btn-orange[disabled]:focus,
+fieldset[disabled] .btn-orange:focus,
+.btn-orange.disabled:active,
+.btn-orange[disabled]:active,
+fieldset[disabled] .btn-orange:active,
+.btn-orange.disabled.active,
+.btn-orange[disabled].active,
+fieldset[disabled] .btn-orange.active {
+  background-color: #ff6600;
+  border-color: #ff6600;
+}
+
+.datepicker table tr td span {
+	line-height:normal;
+	height:auto;
+}
+
+/*
+.dt-buttons{
+    float:right;
+}
+
+
+div.dataTables_filter:has(> div.col-xs-6) {
+    color:red;
+}
+*/
+
+

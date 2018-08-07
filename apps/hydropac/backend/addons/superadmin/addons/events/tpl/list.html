@@ -1,0 +1,9 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Manage {{data.objNames}}
+            <button class="btn m-b-xs btn-sm btn-default btn-addon pull-right m-t-n-xs btn-default" ng-click = "helper.goPeer('.add')"><i class="fa fa-plus"></i>Add new {{data.objName}}</button>
+        </div>
+        <table ui-jq="dataTable" datatable dt-options="dtOptions" dt-columns="dtColumns" dt-instance="tblEvents" class="table table-striped m-b-none row-border hover"></table>
+    </div>
+</div>

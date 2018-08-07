@@ -1,0 +1,63 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Manage {{data.objNames}}
+            <button class="btn m-b-xs btn-sm btn-default btn-addon pull-right m-t-n-xs btn-default" ng-click = "helper.goPeer('.update')"><i class="fa fa-edit"></i>Update Profile</button>
+        </div>
+        <div class="panel-body">
+            <div class="row m-t">
+                <div class="col-sm-7">
+                    <a href="" class="thumb-lg pull-left m-r">
+                        <img src="{{helper.getProfilePic(profile)}}" class="img-circle">
+                    </a>
+                    <div class="clear m-b">
+                        <div class="m-b m-t-sm">
+                            <span class="h3 text-black">{{profile.first_name}} {{profile.last_name}}</span>                            
+                        </div>
+                        <div class="m-t-sm" ng-show = "profile.designation != '' || profile.company_name != ''">                            
+                            <span class = "m-r-xs">{{profile.designation}}</span>
+                            <span class = "m-r-xs">{{profile.company_name}}</span>
+                        </div>
+                        <div ng-show = "profile.email != ''">                            
+                            <span class = "m-r-xs">{{profile.email}}</span>                            
+                        </div>
+                        <div ng-show = "profile.mobile_number != '' || profile.work_phone != ''">                            
+                            <span class = "m-r-xs">{{profile.mobile_number}}</span>
+                            <span class = "m-r-xs">{{profile.work_phone}}</span>
+                        </div>
+                        <div ng-show = "profile.website != ''">                            
+                            <span class = "m-r-xs">{{profile.website}}</span>                            
+                        </div>
+                        <p class="m-b">
+                            <a ng-show = "profile.twitter_handel != ''" href="https://twitter.com/{{profile.twitter_handel}}" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-twitter"></i></a>
+                            <a ng-show = "profile.facebook_handel != ''" href="https://www.facebook.com/{{profile.facebook_handel}}" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-facebook"></i></a>
+                            <a ng-show = "profile.google_plus_handel != ''" href="" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-google-plus"></i></a>
+                            <a ng-show = "profile.linkedin_handel != ''" href="https://www.linkedin.com/in/{{profile.linkedin_handel}}" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fa fa-linkedin"></i></a>
+                        </p>                        
+                    </div>
+                </div>
+          <div class="col-sm-5">
+            <div class="pull-right pull-none-xs">
+                <div ng-show = "profile.address1 != ''">                            
+                    <span class = "m-r-xs">{{profile.address1}}</span>                            
+                </div>
+                <div ng-show = "profile.address2 != ''">                            
+                    <span class = "m-r-xs">{{profile.address2}}</span>                            
+                </div>
+                <div ng-show = "profile.address3 != ''">                            
+                    <span class = "m-r-xs">{{profile.address3}}</span>                            
+                </div>
+                <div ng-show = "profile.city != '' || profile.state != ''">                            
+                    <span class = "m-r-xs">{{profile.city}}</span> 
+                    <span class = "m-r-xs">{{profile.state}}</span>
+                </div>
+                <div ng-show = "profile.country != ''" || profile.postcode != ''">                            
+                    <span class = "m-r-xs">{{profile.country}}</span>
+                    <span class = "m-r-xs">{{profile.postcode}}</span>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+</div>

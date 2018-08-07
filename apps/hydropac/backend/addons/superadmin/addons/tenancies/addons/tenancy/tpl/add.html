@@ -1,0 +1,111 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold wrapper-xs">
+            <div class="row">
+            <div class="col-sm-10">
+                <span class="m-t-xs l-height-30 padder">{{heading}}</span>
+            </div>
+            <div class="col-sm-2">
+                <span class = "pull-right">
+                <label class="i-switch m-t-xs m-r">
+                    <input type="radio" ng-model = "tenancy.tenancy_status_id" name="switch" checked="" value = 1>
+                    <i></i>
+                </label>
+                <label class="i-switch bg-danger m-t-xs m-r">
+                    <input type="radio" ng-model = "tenancy.tenancy_status_id" name="switch" value = 2>
+                    <i></i>
+                </label>
+                </span>
+            </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <form class="form-horizontal form-validation" name="frmAdd">
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Property</label>
+                    <div class="col-sm-5">
+                        <div class="row">
+                            
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.property_id.$invalid }">
+                                <ui-select required name = "property_id" ng-model="tenancy.property_id" theme="bootstrap" >
+                                    <ui-select-match placeholder="Select or search a property in the list...">{{$select.selected.name}}</ui-select-match>
+                                    <ui-select-choices repeat="property.id as property in properties | filter: $select.search"  refresh="refreshProperties($select.search)">
+                                        <div ng-bind-html="property.name | highlight: $select.search"></div>
+                                        <small ng-bind-html="property.user.username + ' : ' + property.user.first_name + ' ' + property.user.last_name | highlight: $select.search" required></small>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">                   
+                    <label class="col-sm-2 control-label">Application Date</label>
+                    <div class="col-md-2" ng-class="{'has-error': frmAdd.tenancy_date.$invalid }">
+                        <wp-datetimepicker name = "tenancy_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenancy.tenancy_date" />
+                    </div>
+                                       
+                    <label class="col-sm-2 control-label">Tenancy Type</label>
+                    <div class="col-sm-2" ng-class="{'has-error': frmAdd.tenancy_type_id.$invalid }">
+                        <select ng-model="tenancy.tenancy_type_id" class="form-control" required>
+                            <option  value="{{p.id}}" ng-repeat="p in TenancyTypes">{{p.name}}</option>                            
+                        </select>
+                    </div>
+                    
+                    <label class="col-sm-2 control-label">Reference No.</label>
+                    <div class="col-sm-2" ng-class="{'has-error': frmAdd.ref_no.$invalid }">
+                        <input type="text" name = "ref_no" ng-model = "tenancy.ref_no" class="form-control" placeholder="Title" required>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+
+                
+                <div class="form-group">                   
+                    <label class="col-sm-2 control-label">Rent Date</label>
+                    <div class="col-md-2" ng-class="{'has-error': frmAdd.rent_date.$invalid }">
+                        <wp-datetimepicker name = "rent_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenancy.rent_date" />
+                    </div>
+                    
+                    <label class="col-sm-2 control-label">Payment mode</label>
+                    <div class="col-sm-2" ng-class="{'has-error': frmAdd.paymode.$invalid }">
+                        <input type="text" name = "paymode" ng-model = "tenancy.paymode" class="form-control" placeholder="" required>
+                    </div>
+                    
+                    <label class="col-sm-2 control-label">Rent Amount</label>
+                    <div class="col-sm-2" ng-class="{'has-error': frmAdd.rent.$invalid }">
+                        <div class="input-group m-b">
+                            <span class="input-group-addon">£</span>
+                            <input type="text" name = "rent"  ng-model = "tenancy.rent" class="form-control" placeholder="" required>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                
+                <div class="form-group">                   
+                    <label class="col-sm-2 control-label">Start Date</label>
+                    <div class="col-md-2" ng-class="{'has-error': frmAdd.rent_date.$invalid }">
+                        <wp-datetimepicker name = "start_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenancy.start_date" />
+                    </div>
+                    
+                    <label class="col-sm-2 control-label">End Date</label>
+                    <div class="col-md-2" ng-class="{'has-error': frmAdd.end_date.$invalid }">
+                        <wp-datetimepicker name = "end_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenancy.end_date" />
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="button" ng-click = "helper.goPeer('.list')" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click = "saveTenancy()" class="btn btn-primary" ng-disabled="frmAdd.$invalid">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

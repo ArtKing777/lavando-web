@@ -1,0 +1,577 @@
+<!--
+<div class="inner-banner text-center">
+	<div class="container">
+		<div class="box">
+            <h3>Register</h3>
+        </div>
+        <div class="breadcumb-wrapper">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <ul class="list-inline link-list">
+                        <li><a href="/">Home</a></li>
+                        <li>Register</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!-- Main Content -->
+
+<section class="our-team">
+	<div class="container"> 
+		
+		<wizard  on-finish="finishedWizard()" on-cancel="cancelledWizard()" indicators-position = "top"> 
+    		
+    		<wz-step wz-title="Postcode"  canexit="validatePostcode">
+    		    
+    		    <div class="row m-lg mobile-space">
+    		        <div class="col-md-12 text-center m-t-lg ">
+    		        <br><br><br><br><br>
+    		        <h5 class = "m-b text-center" style = "color:#beaa6e">Please provide your postcode so Lavando can collect and deliver your clothes straight to your door, whenever it suits you.</h1>
+    		        </div>
+    	        </div>	 
+    			
+       			<div class="row m-lg ">
+       				
+       				<!--  
+       				<div ng-show = "isShowLogin()" class="col-md-6 col-md-offset-3 m-t-lg ">
+       					<button ng-click="lock.show()" class="btn btn-primary btn-lg btn-block">Lets Start</button>       					
+    				</div>
+    				-->
+       				
+      				<div class="col-md-6 col-md-offset-3 m-t-lg ">
+      				    <!--
+      					<h3 class = "m-b">Welcome {{userProfile.name}}</h3>
+      					-->
+      					
+      					
+        				<form name="form" class="form-inline text-center form-validation">
+        				    
+        				    <div class="form-group">
+        						<input type="text" style = "height:50px;" placeholder = "POSTCODE" style = "outline: none;" class="form-control" ng-model="register.postcode" ng-pattern="/^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2})/" required >
+      						</div>
+        				    
+        				    <button type="submit"  style = "height:50px;"  wz-next="GotoStep2()"  class="btn btn-lavando" ng-disabled="form.$invalid">PLACE AN ORDER ONLINE</button>
+        				    
+        				    <!--
+        				    
+          					<div class="panel panel-default">
+            					<div class="panel-heading">
+              						<span class="h4">Enter Postcode</span>
+            					</div>
+            					<div class="panel-body">
+            					    
+              						<p class="text-muted m-b-xs">Please fill the information to continue</p>
+              						
+              						
+              					</div>
+            					<footer class="panel-footer text-right bg-light lter">
+              						
+            					</footer>
+            					
+          					</div>
+          					-->
+        				</form>
+      				</div>
+     			</div>
+    		</wz-step>
+    		    		
+    		<wz-step wz-title="Details">
+    		
+    			
+				<div class="row mobile-space">
+									       				
+      				<div class="col-md-8 col-md-offset-2 m-t-lg "> 
+      				
+      					<div class = "row" ng-show = "isShowLogin()">
+      						<div>      						
+	      						<div class="col-md-6 col-md-offset-3 m-t-lg " ng-show = "register.authScreen == 'signup'">
+	      							<form  name = "frmSU" class="form-validation"  ng-submit="signup(register.emailSU, register.passwordSU)">
+	      							    
+	      							    <h4 class = "text-center m-b" style = "color:#beaa6e">Sign Up</h4>
+      							    
+      							    <h5 class = "text-center m-b-md">If
+you’re new please create and account or 
+<a ng-click = "register.authScreen = 'login'" class = "text-primary">Log In</a> to your
+existing account.</h5>
+	      							    
+	      							   
+	      							    
+	      							    <div class="form-group"  ng-class="{'has-error': frmSU.register.emailSU.$invalid }">
+	                						<label>Email</label>
+	                						<input type="email" class="form-control" ng-model="register.emailSU" required >
+	              						</div>
+	              						
+	              						<div class="form-group" ng-class="{'has-error': frmSU.register.passwordSU.$invalid }">
+	                						<label>Password</label>
+	                						<input type="password" class="form-control" ng-model="register.passwordSU" required >
+	              							<span class="help-block m-b-none">minimum 6 characters in length.</span>
+	              						</div>
+	              						
+	              						<div class="form-group">
+	              						    <div class = "row">
+	              						        <div class = "col-md-12">
+	              						            <button type="submit" class="btn btn-lg col-md-12 col-sm-12 col-xs-12 btn-lavando" ng-disabled="(frmSU.$invalid) || (! signupEnabled)">{{signupCaption}}</button>
+	              						        </div>
+	              						    </div>
+	              						    
+	              						    <div class = "row">
+	              						        <div class = "col-md-12">
+	              						            <h5  class = "text-center m-t-md">
+	              						Already have an account? <a ng-click = "register.authScreen = 'login'" class = "text-primary">Log In</a></h5>
+	              						        </div>
+	              						    </div>
+	              						
+	              						</div>
+	              						
+	              						
+	              						
+	      							    
+	      							    <!--
+	          						    <div class="panel panel-default">
+	            					        <div class="panel-heading">
+	              						        <span class="h4">Sign up</span>
+	            					        </div>
+	            					<div class="panel-body">
+	              						<p class="text-muted m-b-xs">Please fill the information to sign up</p>
+	              						<p class = "text-danger font-bold">{{register.signupErr}}</p>
+	              						
+	              						
+	              					</div>
+	            					<footer class="panel-footer text-right bg-light lter">
+	            					    <a ng-click = "register.authScreen = 'login'">Already an account</a>
+	              						
+	            						
+	            					</footer>
+	            					
+	          						</div>
+	          						-->
+	        						</form>
+	        						
+	        						
+	      						</div>
+      						
+      						<div class="col-md-6 col-md-offset-3  m-t-lg " ng-show = "register.authScreen == 'login'">
+      							<form name="frmLN" class="form-validation"  ng-submit="login(register.emailLN, register.passwordLN)">
+      							    <h4 class = "text-center m-b" style = "color:#beaa6e">Sign In</h4>
+      							    
+      							    <h5 class = "text-center m-b-md">Need an account? <a ng-click = "register.authScreen = 'signup'" class = "text-primary">Join</a></h5>
+      							    
+      							    <div class="form-group">
+                						    <label>Email</label>
+                						    <input type="email" class="form-control" ng-model="register.emailLN" required >
+              						    </div>
+              						
+              						    <div class="form-group">
+                						    <label>Password</label>
+                						    <input type="password" class="form-control" ng-model="register.passwordLN" required >
+                						    
+              						    </div>
+              						    
+              						    <div class="form-group">
+              						        <div class = "row">
+	              						        <div class = "col-md-12">
+	              						            <h5  class = "text-center m-t-md m-b-md"><a ng-click = "register.authScreen = 'forgot'" class = "text-primary">Forgot your Password?</a></h5>
+	              						        </div>
+	              						    </div>
+	              						    
+	              						    <div class = "row">
+	              						        <div class = "col-md-12">
+	              						            <button type="submit" class="btn btn-lavando btn-lg col-md-12 col-sm-12 col-xs-12" ng-disabled="frmLN.$invalid">LOGIN</button>
+	              						        </div>
+	              						    </div>
+	              						    
+	              						    
+	              						
+	              						</div>
+	              						
+      							    <!--
+          						<div class="panel panel-default">
+            					    <div class="panel-heading">
+              						<span class="h4">Login</span>
+            					    </div>
+            					    <div class="panel-body">
+              						    <p class="text-muted m-b-xs">Please fill the information to login</p>
+              						    
+              					    </div>
+            					    <footer class="panel-footer text-right bg-light lter">
+            					        <a ng-click = "register.authScreen = 'signup'">Sign Up</a>
+              						    
+            					    </footer>
+          					    </div>
+          					    -->
+        					    </form>
+      						</div>
+      							
+      						</div>
+      						
+      						<div ng-show = "register.authScreen == 'forgot'">
+      							<div class="col-md-6  m-t-lg col-md-offset-3 ">
+	      							<form  name = "frmFP" class="form-validation">
+	      							    <h4 class = "text-center m-b" style = "color:#beaa6e">Reset Password</h4>
+	      							    
+	      							    <p class = "text-center m-b">Having trouble remembering you password?
+No problem. We’ll send instructions on how to reset it to your email:</p>
+	      							    
+	      							    <div class="form-group"  ng-class="{'has-error': frmSU.register.emailFP.$invalid }">
+	                						<label>Email</label>
+	                						<input type="email" class="form-control" ng-model="register.emailFP" required >
+	              						</div>
+	              						
+	              						<div class="form-group">
+              						        
+	              						    
+	              						    <div class = "row">
+	              						        <div class = "col-md-12">
+	              						            <button type="submit" ng-click="forgot(register.emailFP)" class="btn btn-lavando btn-lg col-md-12 col-sm-12 col-xs-12" ng-disabled="(frmFP.$invalid) || (! forgotEnabled)">{{forgotCaption}}</button>
+	              						        </div>
+	              						    </div>
+	              						    
+	              						    <div class = "row">
+	              						        <div class = "col-md-12">
+	              						            <h5  class = "text-center m-t-md">
+	              						Already have an account? <a ng-click = "register.authScreen = 'login'" class = "text-primary">Log In</a></h5>
+	              						        </div>
+	              						    </div>
+	              						</div>
+	              						
+	              						<!--
+	          						<div class="panel panel-default">
+	            					<div class="panel-heading">
+	              						<span class="h4">Forgot Password</span>
+	            					</div>
+	            					<div class="panel-body">
+	              						<p class="text-muted m-b-xs">Please fill the information to reset password</p>
+	              						<p class = "text-danger font-bold">{{register.forgotErr}}</p>
+	              						
+	              							              						
+	              					</div>
+	            					<footer class="panel-footer text-right bg-light lter">
+	            						<a ng-click = "register.authScreen = 'login'">Already an account ?</a>
+	              						<button type="submit" ng-click="forgot(register.emailFP)" class="btn btn-lavando" ng-disabled="(frmFP.$invalid) || (! forgotEnabled)">{{forgotCaption}}</button>
+	            						
+	            					</footer>
+	          						</div>
+	          						-->
+	        						</form>
+	      						</div>
+      						</div>
+      					
+      					</div>     				
+      					
+      				<div ng-hide = "isShowLogin()">
+        				<form name="form" class="form-validation">
+
+							<h5 class = "text-center m-b-md">By providing your details, Lavando will be able to collect, deliver and notify you when your clothes are ready. So you’re not left waiting at any stage.</h5>
+
+        				    <!--
+        				    <h5 class = "text-center m-b-md m-t-md">A professional Lavando concierge will swing by with custom laundry and garment bags to collect your items.</h5>
+        				    -->
+        				    <div class="row m-t-md">
+      									<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>First Name</label>
+                								<input type="text" name = "firstname" class="form-control" ng-model="register.first_name" required >
+              								</div>
+       									</div>
+             							<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>Last Name</label>
+                								<input type="text" name = "lastname" class="form-control" ng-model="register.last_name" required >
+              								</div>
+       									</div>
+    								</div>
+									<div class="row">
+      									<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>Email</label>
+                								<input type="email" name = "email" class="form-control" ng-model="register.email" required >
+              								</div>
+       									</div>
+             							<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>Mobile No.</label>
+                								<input type="text" class="form-control" name = "phone" ng-model="register.mobile_phone_number" ng-pattern="/^(?:(?:\(?(?:0(?:0|11)\)?[\s-]?\(?|\+)44\)?[\s-]?(?:\(?0\)?[\s-]?)?)|(?:\(?0))(?:(?:\d{5}\)?[\s-]?\d{4,5})|(?:\d{4}\)?[\s-]?(?:\d{5}|\d{3}[\s-]?\d{3}))|(?:\d{3}\)?[\s-]?\d{3}[\s-]?\d{3,4})|(?:\d{2}\)?[\s-]?\d{4}[\s-]?\d{4}))(?:[\s-]?(?:x|ext\.?|\#)\d{3,4})?$/" required >
+              								</div>
+       									</div>
+    								</div>
+    								
+    								
+             						
+             						<div class="form-group">
+              							<label>Address</label>
+              							<ui-select on-select="selectAddress($item, $model)" required name = "address" ng-model="register.address" theme="bootstrap" >
+		                                    <ui-select-match placeholder="Select or search a adress in the list...">{{$select.selected.Text}}</ui-select-match>
+		                                    <ui-select-choices repeat="add.Id as add in addresses | filter: $select.search"  refresh="refreshAddresses($select.search)">
+		                                        <div ng-bind-html="add.Text | highlight: $select.search"></div>
+											</ui-select-choices>
+		                                </ui-select>
+            						</div>
+            						
+               						<div class="row">
+      									<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>House / Flat Number</label>
+                								<input type="text" class="form-control" ng-model="register.address1"  >
+              								</div>
+       									</div>
+             							<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>House Name</label>
+                									<input type="text" class="form-control" ng-model="register.address2"  >
+              								</div>
+       									</div>
+    								</div>
+    
+    								<div class="form-group" ng-hide = "true">
+                						<label>Street</label>
+                						<input type="text" class="form-control" ng-model="register.address3"  >
+              						</div>
+    
+									<div class="row" ng-hide = "true">
+      									<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>City</label>
+                								<input type="text" class="form-control" ng-model="register.city" required >
+              								</div>
+       									</div>
+             							<div class="col-sm-6" ng-hide = "true">
+              								<div class="form-group">
+                								<label>Postcode</label>
+                								<input type="text" disabled class="form-control" ng-model="register.postcode" required >
+              								</div>
+       									</div>
+    								</div>
+    								
+    								<!--
+          					<div class="panel panel-default">
+            					<div class="panel-heading">
+              						<span class="h4">Details</span>
+            					</div>
+            					<div class="panel-body">
+              						
+              						
+    								
+    								
+      							</div>
+            					
+          					</div>
+          					-->
+        				
+        				<footer class=" text-right  lter">
+	  						<button type="button" wz-previous  class="btn btn-lavando">BACK</button>
+	    					<button type="submit" wz-next = "GotoStep3()"  class="btn btn-lavando" ng-disabled="form.$invalid">CONTINUE</button>
+	  					</footer>
+        				
+        				</form>
+      				</div>
+      					
+      					
+	      				
+      				</div>	
+      				
+      			</div>
+			</wz-step>
+			
+			<wz-step wz-title="Preferences">    		
+				<div class="row mobile-space">
+      				<div class="col-md-6 col-md-offset-3 m-t-lg ">
+        				<form name="form" class="form-validation">
+								
+        				    <h5 class = "text-center m-b-md m-t-md">We can customise any order, so let us know your preferences so our bespoke, six stage cleaning process can really shine.</h5>
+        				    
+        				    <div class="form-group">
+             							
+             							<textarea class="form-control"  ng-model="register.remark" rows="5" placeholder="Care Instructions"></textarea>
+             						</div>
+             					
+             					<!--	
+          					<div class="panel panel-default">
+            					<div class="panel-heading">
+              						<span class="h4">Preferences</span>
+            					</div>
+            					<div class="panel-body">
+              						
+								
+								    
+    									
+								</div>
+            					
+          					</div>
+          					-->
+          					
+          					<footer class=" text-right  lter">
+	  						<button type="button" wz-previous  class="btn btn-lavando">BACK</button>
+	    					<button type="submit" wz-next = "GotoStep4()"  class="btn btn-lavando" ng-disabled="form.$invalid">CONTINUE</button>
+	  					</footer>
+        				</form>
+      				</div>
+      			</div>
+			
+			</wz-step>
+			
+    		<wz-step wz-title="Payment">    		
+				<div class="row mobile-space">
+      				<div class="col-md-6 col-md-offset-3 m-t-lg ">
+        				<form name="form" class="form-validation">
+							<h5 class = "text-center m-b-md m-t-md">We’ll sort your clothes and seek approval before any items not on our price list are cleaned. Please note, there is a £30 minimum order.</h5>
+
+        				    <h5 class = "text-center m-b-md m-t-md">Please enter your card details:</h5>
+        				    <div class="form-group">
+                						<label>Card Number</label>
+                						<input type="text" class="form-control" ng-model="register.card_number" ng-pattern="/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/" required >
+              						</div>
+              
+    								<div class="row">
+      									<div class="col-sm-6">
+      										<div class="row">
+      											<div class="col-sm-6">
+		              								<div class="form-group">
+		                								<label>MM</label>
+		                								<select  class="form-control"  ng-model = "register.card_mm" required>
+		                								    <option value = "01">01</option>
+		                								    <option value = "02">02</option>
+		                								    <option value = "03">03</option>
+		                								    <option value = "04">04</option>
+		                								    <option value = "05">05</option>
+		                								    <option value = "06">06</option>
+		                								    <option value = "07">07</option>
+		                								    <option value = "08">08</option>
+		                								    <option value = "09">09</option>
+		                								    <option value = "10">10</option>
+		                								    <option value = "11">11</option>
+		                								    <option value = "12">12</option>
+		                								</select>
+		                								<!--
+		                								<input type="text" class="form-control" ng-model="register.card_mm" ng-pattern="/^(0?[1-9]|1[012])$/" required >
+		                								-->
+		              								</div>
+		              							</div>
+		              							<div class="col-sm-6">
+		              								<div class="form-group">
+		                								<label>YYYY</label>
+		                								<select class="form-control" ng-model="register.card_yyyy" required>
+  <option ng-repeat="year in years">{{year}}</option>
+  </select>
+  <!--
+		                								<input type="text" class="form-control" ng-model="" ng-pattern="/^(20)\d{2}$/" required >
+		                								-->
+		              								</div>
+		              							</div>
+		              						</div>
+       									</div>
+             							<div class="col-sm-6">
+              								<div class="form-group">
+                								<label>CVV</label>
+                								<input type="text" class="form-control" ng-model="register.card_cvv" ng-pattern="/^[0-9]{3,4}$/" required >
+              								</div>
+       									</div>
+    								</div>
+    								
+    								<div class = "row m-b-md">
+    									<div class="col-sm-12">
+    										<p class = "h3 m-t text-center">Lavando will send a valet to your door immediately upon placing an order. Expect a knock on your door within 60 minutes.</p>
+    										<p class = "h3 m-t text-center">We'll sort your clothes for you and will seek your approval for any items which are  not included in our price list (fur coats, leather etc.)</p>
+    										<p class="h3 m-t text-center">Please note there is a &pound;30 minimum order.</h4>
+    									</div>
+    									
+    								</div>
+    								
+    								<div class = "row m-b-md">
+    									<div class="col-sm-12">
+    									    <label class="checkbox-inline">
+    									        <p>
+    										<input type = "checkbox" ng-model = "iagree"> I accept the <a style = "color:blue;" target = "_new" href = "http://lavandodrycleaning.com/terms-conditions/">Lavando Terms & Conditions</a>.</label></p>
+    									</div>
+    									
+    								</div>
+    								
+    								<!--
+          					<div class="panel panel-default">
+            					<div class="panel-heading">
+              						<span class="h4">Payment</span>
+            					</div>
+            					<div class="panel-body">
+              						<p class="text-muted m-b-xs">Please fill the information to continue</p>
+									
+    									
+								</div>
+            					
+          					</div>
+          					-->
+          					
+          					<footer class=" text-right  lter">
+            						<button type="button" wz-previous  class="btn btn-lavando">BACK</button>
+              						<button type="submit" ng-click = "GotoStep5()"   class="btn btn-lavando"  ng-disabled="(frmSU.$invalid) || (! finishEnabled) || (! iagree)">{{finishCaption}}</button>
+            					</footer>
+            					
+            					<div class = "row  m-t-md">
+            					    <div class="col-sm-12 text-center">
+    									    <img src = "/cbooking/apps/hydropac/frontend/images/stripe.png" height = "40%">
+    								</div>
+            					</div>
+        				</form>
+      				</div>
+      			</div>
+			
+			</wz-step>
+    
+			<wz-step wz-title="Confirm">
+        		
+				<div class="row mobile-space">
+      				<div class="col-md-6 col-md-offset-3 m-t-lg ">
+        				<form name="form" class="form-validation">
+        				    
+        				    <div class = "row">
+    									<div class="col-sm-12">
+    										<p class = "h3 m-t text-center">Thanks for your order.</p>
+    										<p class = "h3 m-t text-center">A driver is on their way to your door.</p>
+    										<p class = "h3 m-t text-center">Please let us know if you have any questions.</p>
+    										<p class = "h3 m-t text-center">Want to see your driver in real time? Download the Lavando App now using the links below:</p>
+    									</div>
+    								</div>
+    								<div class = "row m-t">
+    									<div class="col-sm-5 text-center">
+    									    <a href="https://itunes.apple.com/gb/app/lavando/id1233194581?mt=8" target = "_new">
+    										<img src="http://www.lavandoapp.com/wp-content/uploads/2017/07/App-Store-download-1.png" alt="Download Lavando now" title="Download Lavando on the app store now">
+    										</a>
+    									</div>
+    									<div class="col-sm-2 text-center"></div>
+    									<div class="col-sm-5 text-center">
+    									    <a href="https://play.google.com/store/apps/details?id=com.lavando.app&hl=en_GB" target = "_new">
+    										<img src="http://www.lavandoapp.com/wp-content/uploads/2017/07/Google-Play-download-1.png" alt="Download Lavando" title="Download Lavando on Google Play now">
+    										</a>
+    									</div>
+    								</div>
+    								
+    								<!--
+    								<div class = "row m-t">
+    									<div class="col-sm-12 text-center">
+              						<button type="button" ng-click = "goToHomePage()" wz-next  class="btn btn-lavando btn-lg col-md-12" ng-disabled="form.$invalid">GO TO HOMEPAGE</button>
+            					    </div>
+            					    </div>
+            					    -->
+    								
+    								<!--
+          					<div class="panel panel-default">
+            					<div class="panel-heading">
+              						<span class="h4">Confirm</span>
+            					</div>
+            					<div class="panel-body">
+              						
+    								
+    									
+								</div>
+            					
+          					</div>
+          					-->
+        				</form>
+      				</div>
+      			</div>			
+    		</wz-step>
+		</wizard>
+	</div>
+</section>

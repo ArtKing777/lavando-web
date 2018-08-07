@@ -1,0 +1,7 @@
+{
+	"require": {
+		"monolog/monolog": "1.0.*",
+		"stripe/stripe-php": "^6.5",
+		"firebase/php-jwt": "^5.0"
+	}
+}

@@ -1,0 +1,44 @@
+<div class="container w-xl w-auto-xs" ng-init="app.settings.container = false;">
+    <p><br><br></p>
+	<!-- 
+	<div class="text-center" ng-include="$state.current.data.addonUrl + '/tpl/blocks/logo.html'"></div>
+	-->
+	
+    <div class="m-b-lg">
+        <div class = "row">
+            <div class = "col-md-12 m-t-md text-center m-b-md">
+                <img src = "http://www.lavandoapp.com/wp-content/uploads/2017/07/Logo-Name-Gold-logo-black-text-SIDE-1.png">
+            </div>
+        </div>
+        <div class="wrapper text-center">
+            <strong>Input your email to reset your password</strong>
+        </div>
+        <form name="reset" ng-init="isCollapsed=true">
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <input type="email" placeholder="Email" ng-model="user.username" class="form-control no-border" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-lavando btn-block" ng-click="requestResetPassword()" ng-disabled='form.$invalid'>RESET PASSWORD</button>
+
+            <div class="text-center m-t m-b">
+            <!-- 
+                       <a ui-sref="access.signup">Create new account</a> | 
+                       -->
+                       <a ui-sref="access.signin">Click here to Sign In</a></div>
+
+        </form>
+        
+        <!--  
+        <div collapse="isCollapsed" class="m-t">
+            <div class="alert alert-default">
+                <p>A reset link sent to your email address. <a ui-sref="access.signin" class="btn btn-sm btn-default">Sign in</a></p>
+            </div>
+        </div>
+        -->
+    </div>
+    
+    <!-- 
+    <div class="text-center" ng-include="$state.current.data.addonUrl + '/tpl/blocks/page_footer.html'"></div>
+    -->
+</div>

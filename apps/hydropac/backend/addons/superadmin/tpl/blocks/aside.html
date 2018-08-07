@@ -1,0 +1,62 @@
+<div class="aside-wrap">
+  <!-- if you want to use a custom scroll when aside fixed, use the slimScroll
+    <div class="navi-wrap" ui-jq="slimScroll" ui-options="{height:'100%', size:'8px'}">
+  -->
+  <div class="navi-wrap">
+    <!-- user -->
+    <div class="clearfix hidden-xs text-center hide" id="aside-user">
+      <div class="dropdown wrapper" uib-dropdown>
+        <a>
+          <span class="thumb-lg w-auto-folded avatar m-t-sm">
+            <img src="{{helper.getProfilePic(authData)}}" class="img-full" alt="...">
+          </span>
+        </a>
+        <a href class="dropdown-toggle hidden-folded" uib-dropdown-toggle>
+          <span class="clear">
+            <span class="block m-t-sm">
+              <strong class="font-bold text-lt">{{authData.first_name}} {{authData.last_name}}</strong>
+              <b class="caret"></b>
+            </span>
+            <span class="text-muted text-xs block">{{authData.designation}}</span>
+          </span>
+        </a>
+        <!-- dropdown -->
+        <ul class="dropdown-menu animated fadeInRight w hidden-folded" uib-dropdown-menu>
+          
+          <li>
+            <a ui-sref="{{authData.userType.tplkey}}.profile.view">Profile</a>
+          </li>
+
+          <li class="divider"></li>
+          <li>
+            <a ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+        <!-- / dropdown -->
+      </div>
+      <div class="line dk hidden-folded"></div>
+    </div>
+    <!-- / user -->
+
+    <!-- nav -->
+    <nav ui-nav class="navi" ng-include="getNav()"></nav>
+    <!-- nav -->
+
+    <!-- aside footer -->
+      <!--
+    <div class="wrapper m-t">
+      <div class="text-center-folded">
+        <span class="pull-right pull-none-folded">03%</span>
+        <span class="hidden-folded" translate="aside.MILESTONE">Warnings</span>
+      </div>
+      <progressbar value="60" class="progress-xxs m-t-sm dk" type="info"></progressbar>
+      <div class="text-center-folded">
+        <span class="pull-right pull-none-folded">02%</span>
+        <span class="hidden-folded" translate="aside.RELEASE">Alerts</span>
+      </div>
+      <progressbar value="35" class="progress-xxs m-t-sm dk" type="primary"></progressbar>
+    </div>
+    -->
+    <!-- / aside footer -->
+  </div>
+</div>

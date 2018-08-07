@@ -1,0 +1,131 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            {{heading}}
+        </div>     
+
+        <div class="panel-body">           
+            <form class="form-horizontal form-validation" name="frmAdd">
+           
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">News Title</label>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.title.$invalid }">
+                                <input required type="text" name = "title" ng-model = "news.title" class="form-control" placeholder="News Title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Slug</label>
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.slug.$invalid }">
+                                <input required type="text" name = "slug" ng-model = "news.slug" class="form-control" placeholder="Slug">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">News Date</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-4" ng-class="{'has-error': frmAdd.author.$invalid }">
+                                <wp-datetimepicker name = "news_date" ng-required = "true" enable-time ="true" enable-date ="true" format = "dd-MMM-yyyy HH:mm" ng-model ="news.news_date" />
+                            </div>                           
+                        </div>                                           
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Short Description</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <textarea class="form-control" ng-model = "news.short_desc" rows="3" placeholder="Short Description"></textarea>
+                            </div>                           
+                        </div> 
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">News Image</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-4">
+                                <wp-img-uploader ng-model = "news.news_image" data-size = "370x200"></wp-img-uploader>
+                            </div>                           
+                        </div>                                           
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">News Author</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.author.$invalid }">
+                                <input required type="text" name = 'author' ng-model = "news.author" class="form-control" placeholder="Author">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <textarea ui-tinymce="tinymceOptions" class="form-control" ng-model = "news.content" rows="12" placeholder="Content"></textarea>
+                            </div>                            
+                        </div>                    
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                              
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">SEO Meta Data</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "news.meta_title" class="form-control" placeholder="Meta Title">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <textarea class="form-control" ng-model = "news.meta_description" rows="3" placeholder="Meta Description"></textarea>
+                            </div>                           
+                        </div> 
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <textarea class="form-control" ng-model = "news.meta_keywords" rows="3" placeholder="Meta Keywords"></textarea>
+                            </div>                           
+                        </div> 
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Active / Deactive</label>
+                    <div class="col-sm-10">
+                        <label class="i-switch m-t-xs m-r">
+                            <input type="radio" ng-model = "news.status_id" name="switch" checked="" value = 1>
+                            <i></i>
+                        </label>
+                        <label class="i-switch bg-danger m-t-xs m-r">
+                            <input type="radio" ng-model = "news.status_id" name="switch" value = 2>
+                            <i></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="button" ng-click = "helper.goPeer('.list')" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click = "helper.save('news/save', news)" class="btn btn-primary" ng-disabled="frmAdd.$invalid">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+total_storage_limit: 120M
+queue:
+- name: default
+  rate: 2/s
+  bucket_size: 5
+  max_concurrent_requests: 1
+  retry_parameters:
+    min_backoff_seconds: 1
+    max_backoff_seconds: 2
+    max_doublings: 1

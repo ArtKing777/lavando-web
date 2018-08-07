@@ -1,0 +1,475 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            {{heading}}
+        </div>
+
+        <div class="panel-body">
+            <form class="form-horizontal form-validation" name="frmAdd">
+       
+                <div class = "row">
+                    <div class="col-sm-8">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-5" ng-class="{'has-error': frmAdd.first_name.$invalid }">
+                                        <input required type="text" name = "first_name" ng-model = "cffApplication.first_name" class="form-control" placeholder="First Name" >
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="text" name = "mi_number" ng-model = "cffApplication.mi_number" class="form-control" placeholder="MI" >
+                                    </div>
+                                    <div class="col-md-5" ng-class="{'has-error': frmAdd.last_name.$invalid }">
+                                        <input required type="text" name = "last_name" ng-model = "cffApplication.last_name" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>  
+                          
+                                              
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Contact details</label>
+                            <div class="col-sm-9">
+                                <div class="row m-b">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                            <input type="text" ng-model = "cffApplication.work_phone" class="form-control" placeholder="Work Phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                            <input type="text" class="form-control" ng-model = "cffApplication.mobile_number" placeholder="Mobile">
+                                        </div>
+                                    </div>
+                                </div>   
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group" ng-class="{'has-error': frmAdd.email.$invalid }">
+                                            <span class="input-group-addon"><i class="icon-envelope"></i></span>
+                                            <input required type="email" name = "email" ng-model = "cffApplication.email" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">http://</span>
+                                            <input type="text" ng-model = "cffApplication.url" class="form-control" placeholder="Website">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Event Details</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-12" ng-class="{'has-error': frmAdd.event_id.$invalid }">
+                                        <ui-select required name = "event_id" ng-model="cffApplication.event_id" theme="bootstrap" >
+                                            <ui-select-match placeholder="Select or search an event in the list...">{{$select.selected.title}}</ui-select-match>
+                                            <ui-select-choices repeat="event.id as event in events | filter: $select.search"  refresh="refreshEvents($select.search)">
+                                                <div ng-bind-html="event.title | highlight: $select.search"></div>
+                                                <small ng-bind-html="event.event_date + ' : ' + event.state | highlight: $select.search" required></small>
+                                            </ui-select-choices>
+                                        </ui-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                                <label class="col-sm-3 control-label">Payment Details</label>
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <select ng-model="cffApplication.is_paid" class="form-control">
+                                                <option  value="1">Paid</option>   
+                                                <option  value="0">Unpaid</option>                            
+                                            </select>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <input type="text" name = "payment_details" ng-model = "cffApplication.payment_details" class="form-control" placeholder="Payment Details" >
+                                        </div>
+                                    </div>
+                                </div>                           
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                                   
+                    </div>
+                
+                    <div class="col-sm-4">
+                        <div class="row m-b">
+                            <div class="col-md-8 col-md-offset-2">
+                                <wp-img-uploader ng-model = "cffApplication.profile_image" data-size = "210x160"></wp-img-uploader>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Company Details</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.company_name.$invalid }">
+                                <input type="text" name = "company_name" ng-model = "cffApplication.company_name" class="form-control" placeholder="Company Name" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Industry & Designation</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-6" ng-class="{'has-error': frmAdd.designation.$invalid }">
+                                <input type="text" name = "designation" ng-model = "cffApplication.designation" class="form-control" placeholder="Job Title" required>
+                            </div>
+                            <div class="col-md-6" ng-class="{'has-error': frmAdd.industry.$invalid }">
+                                <input type="text" name = "industry" ng-model = "cffApplication.industry" class="form-control" placeholder="Industry" required>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Licenses</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.licenses.$invalid }">
+                                <input type="text" name = "licenses" ng-model = "cffApplication.licenses" class="form-control" placeholder="Licenses">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Certificates</label>
+                    <div class="col-sm-8">
+                        <div class = "row">
+                            <div class="col-md-12" ng-class="{'has-error': frmAdd.certificates.$invalid }">
+                                <input type="text" name = "certificates" ng-model = "cffApplication.certificates" class="form-control" placeholder="Certificates" >
+                            </div>
+                        </div>
+                    </div>
+                </div>              
+
+                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Mailing address</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-3">
+                                <select ng-model="cffApplication.address_type" class="form-control">
+                                    <option  value="Business">Business</option>   
+                                    <option  value="Residential">Residential</option>                            
+                                </select>
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "cffApplication.address1" class="form-control" placeholder="Address Line 1">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "cffApplication.address2" class="form-control" placeholder="Address Line 2">
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.city" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.state" class="form-control" placeholder="State">
+                            </div>
+                             <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.postcode" class="form-control" placeholder="Postcode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Billing address</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "cffApplication.billing_address1" class="form-control" placeholder="Address Line 1">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "cffApplication.billing_address2" class="form-control" placeholder="Address Line 2">
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.billing_city" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.billing_state" class="form-control" placeholder="State">
+                            </div>
+                             <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.billing_postcode" class="form-control" placeholder="Postcode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Home address</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "cffApplication.home_address1" class="form-control" placeholder="Address Line 1">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "cffApplication.home_address2" class="form-control" placeholder="Address Line 2">
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.home_city" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.home_state" class="form-control" placeholder="State">
+                            </div>
+                             <div class="col-md-4">
+                                <input type="text" ng-model = "cffApplication.home_postcode" class="form-control" placeholder="Postcode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Disclosure Questionnaire</label>
+                    <div class="col-sm-10">
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer1" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer1" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Have you ever been accused or convicted of a felony?
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer2" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer2" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Within the last 10 years, have you been a defendant or respondent in any criminal action relating to your professional or business conduct, or are you currently named as a party in any such action?
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer3" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer3" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Within the last 10 years, have you been a defendant or respondent in a civil action, which includes, but is not limited to, a lawsuit, arbitration, or mediation relating to your professional or business conduct, or are you currently named as a party in any such action?
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer4" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer4" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Within the last 10 years, have you had a license, permit, certificate, registration or membership denied, suspended, revoked or restricted by any governmental, regulatory, or administrative body, or has any such body censured, fined, restricted or reprimanded you?
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer5" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer5" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Within the last 10 years, have you been named as the subject of an investigation or complaint by any governmental, regulatory or administrative body?
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer6" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer6" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Within the last 10 years, have you been censured, fined reprimanded or otherwise disciplined by any professional credentialing organization to which you did or do belong or has such organization named you as a subject of an investigation or complaint?
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer7" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer7" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Are you licensed to sell insurance?
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer8" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer8" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Are you licensed to sell securities?
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer9" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer9" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                Do you have 10 or more years of relevant work experience in your field?
+                            </div>
+                        </div>                      
+                        
+                        <div class="checkbox row">                            
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer10" value = "1"><i></i>Yes
+                            </label>
+                            <label class="i-checks m-l col-sm-1">                                
+                                <input type="radio"  ng-model = "cffApplication.answer10" value = "2"><i></i>No
+                            </label>
+                            <div class = "col-sm-8">
+                                If your answer to number 9 is NO, do you have 5 years of relevant experience with a bachelor or master's degree (If your answer is still NO, you do not meet the qualifications to become a CFF® at this time.)
+                            </div>
+                        </div>                                                
+                        
+                    </div>
+                </div>
+                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Social details</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-skype"></i></span>
+                                    <input type="text" ng-model = "cffApplication.skype_handel" class="form-control" placeholder="Skype">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-social-dropbox"></i></span>
+                                    <input type="email" ng-model = "cffApplication.dropbox_email" class="form-control" placeholder="Dropbox">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
+                                    <input type="text" ng-model = "cffApplication.google_plus_handel" class="form-control" placeholder="Google+">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">     
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-social-facebook"></i></span>
+                                    <input type="text" ng-model = "cffApplication.facebook_handel" class="form-control" placeholder="Facebook">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-social-twitter"></i></i></span>
+                                    <input type="text" ng-model = "cffApplication.twitter_handel" class="form-control" placeholder="Twitter">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-linkedin"></i></span>
+                                    <input type="text" ng-model = "cffApplication.linkedin_handel" class="form-control" placeholder="Linked In">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Active / Deactive</label>
+                    <div class="col-sm-10">
+                        <label class="i-switch m-t-xs m-r">
+                            <input type="radio" ng-model = "cffApplication.status_id" name="switch" checked="" value = 1>
+                            <i></i>
+                        </label>
+                        <label class="i-switch bg-danger m-t-xs m-r">
+                            <input type="radio" ng-model = "cffApplication.status_id" name="switch" value = 2>
+                            <i></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="button" ng-click = "helper.goPeer('.list')" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click = "helper.save('cffapplications/save', cffApplication)" class="btn btn-primary" ng-disabled="frmAdd.$invalid">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

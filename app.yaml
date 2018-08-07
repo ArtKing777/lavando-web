@@ -1,0 +1,58 @@
+application: awi-rms
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+# favicon.ico support
+- url: /(favicon\.ico)
+  static_files: \1
+  upload: (awirms/img/favicon\.ico)
+
+- url: /assets/(.+)
+  static_files: assets/\1
+  upload: assets/(.+)
+
+- url: /awirms
+  static_dir: awirms
+
+- url: /prmedia
+  static_dir: prmedia
+
+- url: /infovinity
+  static_dir: infovinity
+
+- url: /themes/classic/assets
+  static_dir: themes/classic/assets
+
+  # PhpMyAdmin handler
+
+- url: /pma/(.*\.(ico$|jpg$|png$|gif$))
+  static_files: pma/\1
+  upload: pma/(.*\.(ico$|jpg$|png$|gif$))
+  application_readable: true
+
+- url: /pma/(.*\.(htm$|html$|css$|js$))
+  static_files: pma/\1
+  upload: pma/(.*\.(htm$|html$|css$|js$))
+  application_readable: true
+
+- url: /pma/(.*\.(php$))
+  script: pma/\1
+  # secure: always
+  # login: admin
+
+- url: /pma/(.+)
+  script: pma/index.php
+  # secure: always
+  # login: admin
+
+- url: /pma/
+  script: pma/index.php
+  # secure: always
+  # login: admin
+
+# Main handler
+- url: /.*
+  script: index.php
+

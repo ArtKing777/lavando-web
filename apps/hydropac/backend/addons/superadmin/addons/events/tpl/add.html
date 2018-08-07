@@ -1,0 +1,187 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            {{heading}}
+        </div>
+
+        <div class="panel-body">
+            <form class="form-horizontal form-validation" name="frmAdd">
+       
+                <div class = "row">
+                    <div class="col-sm-8">
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Course</label>
+                            <div class="col-md-9" ng-class="{'has-error': frmAdd.course_id.$invalid }">
+                                <select required name = "course_id" ng-model="event.course_id" ng-change="refreshEventContent()" class="form-control">
+                                     <option  value="{{course.id}}" ng-repeat="course in Courses">{{course.course_code}} : {{course.name}}</option>                            
+                                </select>
+                             </div> 
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Title</label>
+                            <div class="col-sm-9" ng-class="{'has-error': frmAdd.title.$invalid }">
+                                <input required type="text" name = "title" ng-model = "event.title" class="form-control" placeholder="Title" >                                    
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>                
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Event Type</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.event_type_id.$invalid }">
+                                       <select required name = "event_type_id" ng-model="event.event_type_id" class="form-control">
+                                            <option  value="{{et.id}}" ng-repeat="et in EventTypes">{{et.name}}</option>                            
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.instructor.$invalid }">
+                                        <input required type="text" name = "instructor" ng-model = "event.instructor" class="form-control" placeholder="Instructor" >
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="input-group" ng-class="{'has-error': frmAdd.price.$invalid }">
+                                            <span class="input-group-addon">$</i></span>
+                                            <input  required type="text" class="form-control" name = "price" ng-model = "event.price" placeholder="Price">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Date & Price</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.event_date.$invalid }">
+                                        <wp-datetimepicker name = "event_date" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="event.event_date" />
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.start_time.$invalid }">
+                                        <wp-datetimepicker name = "start_time" ng-required = "true" enable-time ="true" enable-date ="false"  format = "HH:mm" ng-model ="event.start_time" />
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.end_time.$invalid }">
+                                        <wp-datetimepicker name = "end_time" ng-required = "true" enable-time ="true" enable-date ="false"  format = "HH:mm" ng-model ="event.end_time" />
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Event Options</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control"  name = "event_options" rows = 4 ng-model = "event.event_options"></textarea>  
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Mailing address</label>
+                            <div class="col-sm-9">
+                                <div class="row m-b">
+                                    <div class="col-md-12">
+                                        <input type="text" ng-model = "event.address1" class="form-control" placeholder="Venue Name">
+                                    </div>                           
+                                </div>
+                                <div class="row m-b">
+                                    <div class="col-md-12">
+                                        <input type="text" ng-model = "event.address2" class="form-control" placeholder="Address Line 1">
+                                    </div>                           
+                                </div>
+                                <div class="row m-b">
+                                    <div class="col-md-12">
+                                        <input type="text" ng-model = "event.address3" class="form-control" placeholder="Address Line 2">
+                                    </div>                           
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" ng-model = "event.city" class="form-control" placeholder="City">
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.state.$invalid }">
+                                        <input required type="text" name = "state" ng-model = "event.state" class="form-control" placeholder="State">
+                                    </div>
+                                     <div class="col-md-4">
+                                        <input type="text" ng-model = "event.postcode" class="form-control" placeholder="Postcode">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                   
+                    </div>
+                
+                    <div class="col-sm-4">
+                        <div class="row m-b">
+                            <div class="col-md-8 col-md-offset-2">
+                                <wp-img-uploader ng-model = "event.event_image" data-size = "370x200"></wp-img-uploader>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                              
+
+               
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Content</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "event.title1" class="form-control" placeholder="Title">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <textarea ui-tinymce="tinymceOptions" class="form-control" ng-model = "event.content1" rows="12" placeholder="Content"></textarea>
+                            </div>                            
+                        </div>                    
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Event Video</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "event.video_link" class="form-control" placeholder="Video Link">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <wp-video-uploader ng-model = "event.event_video" data-size = "370x200"></wp-video-uploader>
+                            </div>                           
+                        </div>                                           
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Active / Deactive</label>
+                    <div class="col-sm-10">
+                        <label class="i-switch m-t-xs m-r">
+                            <input type="radio" ng-model = "event.status_id" name="switch" checked="" value = 1>
+                            <i></i>
+                        </label>
+                        <label class="i-switch bg-danger m-t-xs m-r">
+                            <input type="radio" ng-model = "event.status_id" name="switch" value = 2>
+                            <i></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="button" ng-click = "helper.goPeer('.list')" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click = "console.log(event);helper.save('events/save', event)" class="btn btn-primary" ng-disabled="frmAdd.$invalid">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

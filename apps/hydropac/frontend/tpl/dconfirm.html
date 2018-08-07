@@ -1,0 +1,58 @@
+<!--
+<div class="inner-banner text-center">
+	<div class="container">
+		<div class="box">
+            <h3>Confirm Delivery</h3>
+        </div>
+        <div class="breadcumb-wrapper">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <ul class="list-inline link-list">
+                        <li><a href="#">Home</a></li>
+                        <li>Confirm Delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<!-- Main Content -->
+
+<section class="our-team sec-padd2">
+    <div class = "row">
+            <div class = "col-md-12 text-center m-b-md">
+                <img src = "http://www.lavandoapp.com/wp-content/uploads/2017/07/Logo-Name-Gold-logo-black-text-SIDE-1.png">
+            </div>
+        </div>
+		<h5 class = "text-center m-t-md m-b-md">Hit ‘collect’ and we’ll send a Quiqup driver to pick up your clothes straight away. Please place your clothes in a bag ready for collection.</h5>
+
+	<div class="container"> 
+		<div class="col-md-6 col-md-offset-3 m-t-lg ">
+			<h3 class = "m-b">Welcome {{ord.user.first_name}} {{ord.user.last_name}}</h3>
+				<form name="form" class="form-validation">
+  					<div class="panel panel-default">
+    					<div class="panel-heading">
+      						<span class="h4">Confirm Delivery for order ({{ord.human_id}})</span>
+    					</div>
+    					<div class="panel-body" ng-show = "showButton">
+      						<h5 class="m-b-md">Your clothes are ready for delivery. Just tap below  and we'll deliver your clothes to your door within an hour.</h5>
+      						<!-- 
+      						<p>Delivery Time : {{dtime}}</p>
+      						<p>Address : {{ord.deliver_address.building}} {{ord.delivery_address.street_name}} {{ord.delivery_address.city}} {{ord.delivery_address.state}} {{ord.delivery_address.country}} {{ord.delivery_address.zip_code}}</p>
+      						-->
+      						<div class="form-group">
+        						<button type="button" ng-disabled = "disabledButton"  ng-click="updateOrder()"  class="btn btn-lg btn-lavando col-md-12">CONFIRM DELIVERY</button>
+        					</div>
+      					</div>  
+      					
+      					<div class="panel-body" ng-hide = "showButton">
+      						<h5 class="m-b-xs">Thanks for your confirmation.</h5>      						
+      					</div>   					
+  					</div>
+				</form>
+		</div>
+	
+	</div>
+</section>

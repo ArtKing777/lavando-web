@@ -1,0 +1,105 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            {{heading}}
+        </div>
+
+        <div class="panel-body">
+            <form class="form-horizontal form-validation" name="frmAdd">
+       
+                <div class = "row">
+                    <div class="col-sm-8">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-6" ng-class="{'has-error': frmAdd.first_name.$invalid }">
+                                        <input required type="text" name = "first_name" ng-model = "inquiry.first_name" class="form-control" placeholder="First Name" >
+                                    </div>
+                                    <div class="col-md-6" ng-class="{'has-error': frmAdd.last_name.$invalid }">
+                                        <input required type="text" name = "last_name" ng-model = "inquiry.last_name" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>   
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Contact details</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                            <input type="text" ng-model = "inquiry.mobile_number" class="form-control" placeholder="Work Phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group" ng-class="{'has-error': frmAdd.email.$invalid }">
+                                            <span class="input-group-addon"><i class="fa fa-email"></i></span>
+                                            <input required type="email" name = "email" class="form-control" ng-model = "inquiry.email" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>                
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Subject</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-12" ng-class="{'has-error': frmAdd.subject.$invalid }">
+                                        <input type="text" name = "subject" ng-model = "inquiry.subject" class="form-control" placeholder="Subject" required>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>                
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Message</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-12" ng-class="{'has-error': frmAdd.message.$invalid }">
+                                        <textarea required name = "message" class="form-control" ng-model = "inquiry.message" rows="3" placeholder="Message"></textarea>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>                        
+                       
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Active / Deactive</label>
+                            <div class="col-sm-9">
+                                <label class="i-switch m-t-xs m-r">
+                                    <input type="radio" ng-model = "inquiry.status_id" name="switch" checked="" value = 1>
+                                    <i></i>
+                                </label>
+                                <label class="i-switch bg-danger m-t-xs m-r">
+                                    <input type="radio" ng-model = "inquiry.status_id" name="switch" value = 2>
+                                    <i></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                               
+                    
+                    </div>
+                </div>
+                                
+                <div class="line line-dashed b-b line-lg pull-in"></div>               
+                
+                
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="button" ng-click = "helper.goPeer('.list')" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click = "helper.save('inquiries/save', inquiry)" class="btn btn-primary" ng-disabled="frmAdd.$invalid">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

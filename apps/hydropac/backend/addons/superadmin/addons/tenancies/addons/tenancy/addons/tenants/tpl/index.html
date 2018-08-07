@@ -1,0 +1,26 @@
+<div class="wrapper-md">
+<button class="btn m-b btn-sm btn-default btn-addon pull-right m-t-n-xs btn-default" 
+    ng-bootbox-title="Add a Tenant"
+    ng-bootbox-custom-dialog
+    ng-bootbox-custom-dialog-template="{{data.addonUrl}}/tpl/add.html"
+    ng-bootbox-options="dialogOptions"><i class="fa fa-plus"></i>Add a Tenant</button>
+                    
+	<div class = "clearfix"></div>                
+	     <div ui-view class=" fade-in-right">
+	         <div class="container w-xxl w-auto-xs">
+	           <div class="text-center m-b-lg">
+	             <h1 class="text-shadow text-white"></h1>
+	           </div>
+	           <div class="list-group bg-info auto m-b-sm m-b-lg">
+	             <a ui-sref="superadmin.tenancies.edit.tenant" class="list-group-item">
+	               <i class="fa fa-chevron-right text-muted"></i>
+	               <i class="fa fa-fw fa-list m-r-xs"></i> List Users
+	             </a>
+	             <a ui-sref="{{authData.userType.tplkey}}.users.add" class="list-group-item">
+	               <i class="fa fa-chevron-right text-muted"></i>
+	               <i class="fa fa-fw fa-plus m-r-xs"></i> Add User
+	             </a>
+	           </div>
+	         </div>
+	     </div>
+	</div>

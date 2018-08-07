@@ -1,0 +1,60 @@
+<div class = "row">
+
+    <div class = "col-sm-4" ng-repeat="t in tenants">
+
+		<div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="clearfix">
+                <a  ng-click = "editTenant(t)" class="pull-left thumb-md avatar b-3x m-r">
+                  <img src="{{helper.getProfilePic(t)}}" class="img-circle">
+                </a>
+                <div class="clear">
+                  <div class="h3 m-t-xs m-b-xs">
+                    {{t.first_name}} {{t.last_name}}
+                    <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                  </div>
+                  <small class="text-muted">{{t.mobile_number}}</small>
+                </div>
+              </div>
+            </div>
+            <div class="list-group no-radius alt">
+              <a class="list-group-item" href="">
+                <i class="fa fa-check text-success pull-right"></i>
+                <i class="fa fa-user fa-fw text-muted m-r-xs"></i> 
+                Personal Details
+              </a>
+              <a class="list-group-item" href="">
+                <i class="fa fa-check text-success pull-right"></i>
+                <i class="fa fa-bank fa-fw text-muted m-r-xs"></i> 
+                Bank Details
+              </a>
+              <a class="list-group-item" href="">
+                <i class="fa fa-warning text-warning pull-right"></i>
+                <i class="fa fa-credit-card fa-fw text-muted m-r-xs"></i> 
+                Credit Report
+              </a>
+              <a class="list-group-item" href="">
+                <i class="fa fa-check text-success pull-right"></i>
+                <i class="fa  fa-map-marker fa-fw text-muted m-r-xs"></i> 
+                Address Verification
+              </a>
+              <a class="list-group-item" href="">
+                <i class="fa fa-check text-success pull-right"></i>
+                <i class="fa  fa-users fa-fw text-muted m-r-xs"></i> 
+                Employment Verification
+              </a>
+              <a class="list-group-item" href="">
+                <i class="fa fa-check text-success pull-right"></i>
+                <i class="fa fa-file-text-o fa-fw text-muted m-r-xs"></i> 
+                Documents
+              </a>
+              <a class="list-group-item" href="">
+                <i class="fa fa-warning text-warning pull-right"></i>
+                <i class="fa fa-legal fa-fw text-muted m-r-xs"></i> 
+                Signed & Acceptance
+              </a>
+            </div>
+          </div>
+    </div>
+    
+</div>

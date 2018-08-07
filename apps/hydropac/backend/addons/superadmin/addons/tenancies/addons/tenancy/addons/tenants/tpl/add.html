@@ -1,0 +1,83 @@
+<div class = "row">
+	<div class="col-md-8">
+		
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.first_name.$invalid }">
+	             	<label>First Name</label>
+	             	<input type="text" name = "first_name" ng-model = "tenant.first_name" class="form-control" placeholder="" required>
+	        	</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.last_name.$invalid }">
+	             	<label>Last Name</label>
+	             	<input type="text" name = "last_name" ng-model = "tenant.last_name" class="form-control" placeholder="" required>
+	        	</div>
+			</div>
+		</div>	
+		
+		<div class="clearfix"></div>
+		
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.first_name.$invalid }">
+	             	<label>Email address</label>
+	             	<input type="text" name = "email" ng-model = "tenant.email" class="form-control" placeholder="" required>
+	        	</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.first_name.$invalid }">
+	             	<label>Mobile Number</label>
+	             	<input type="text" name = "mobile_number" ng-model = "tenant.mobile_number" class="form-control" placeholder="" required>
+	        	</div>
+			</div>
+		</div>	
+		
+		<div class="clearfix"></div>
+		
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.date_of_birth.$invalid }">
+	             	<label>Date of Birth</label>
+	             	<wp-datetimepicker name = "date_of_birth" ng-required = "true" enable-time ="false" enable-date ="true" format = "dd-MMM-yyyy" ng-model ="tenant.date_of_birth" />
+	             	
+	        	</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.ni_number.$invalid }">
+	             	<label>NI Number</label>
+	             	<input type="text" name = "ni_number" ng-model = "tenant.ni_number" class="form-control" placeholder="" required>
+	        	</div>
+			</div>
+		</div>
+		
+		<div class="clearfix"></div>
+		
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.tenant_type_id.$invalid }">
+	             	<label>Type</label>
+	             	<select name = "tenant_type_id" ng-model="tenant.tenant_type_id" class="form-control" required>
+		            	<option  value="{{p.id}}" ng-repeat="p in tenantTypes">{{p.name}}</option>                            
+		        	</select>
+	        	</div>
+			</div>
+			
+			<div class = "col-md-6">
+				<div class="form-group"  ng-class="{'has-error': frmAdd.rent_share.$invalid }">
+	             	<label>Share %</label>
+	             	<input type="text" name = "rent_share" ng-model = "tenant.rent_share" class="form-control" placeholder="" required>
+	        	</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="col-md-4">
+        <wp-img-uploader ng-model = "tenant.profile_image" data-size = "200x200"></wp-img-uploader>
+    </div>
+                            
+</div>

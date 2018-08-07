@@ -1,0 +1,23 @@
+<div class="wrapper-md">
+    <div class = "panel panel-body hbox">
+        <uib-tabset active = "active">
+            <uib-tab index="1" ui-sref="superadmin.tenancies.tenancy.add" ng-show = "$state.current.data.tabs.add">
+                <uib-tab-heading>
+                    Basic Details
+                </uib-tab-heading>
+            </uib-tab>
+            <uib-tab index="2" ui-sref="superadmin.tenancies.tenancy.edit({id:'{{$stateParams.id}}'})" ng-show = "$state.current.data.tabs.edit">
+                <uib-tab-heading>
+                    Update Details
+                </uib-tab-heading>
+            </uib-tab>
+            <uib-tab index="3" ui-sref="superadmin.tenancies.tenancy.tenants.list({id:'{{$stateParams.id}}'})"  ng-show = "$state.current.data.tabs.tenants">
+                <uib-tab-heading>
+                    Tenants
+                </uib-tab-heading>
+            </uib-tab>
+        </uib-tabset>
+        
+        <div ui-view class="fade-in-right"></div>
+    </div>
+</div>

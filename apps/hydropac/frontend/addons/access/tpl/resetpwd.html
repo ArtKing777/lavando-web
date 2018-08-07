@@ -1,0 +1,27 @@
+<div class="container w-xl w-auto-xs" ng-init="app.settings.container = false;">
+    <div class="text-center" ng-include="$state.current.data.addonUrl + '/tpl/blocks/logo.html'"></div>
+    <div class="m-b-lg">
+        <div class="wrapper text-center">
+            <strong>Please set new password</strong>
+        </div>
+        <form name="reset" ng-init="isCollapsed=true">
+            <div class="text-danger wrapper text-center" ng-show="resetError">
+                {{resetError}}
+            </div>
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <input type="password" placeholder="New Password" ng-model="passwrd" class="form-control no-border" required>
+                </div>
+
+                <div class="list-group-item">
+                    <input type="password" placeholder="Reenter Password" ng-model="cpasswrd" class="form-control no-border" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="ResetPassword()" ng-disabled='reset.$invalid'>Reset Password</button>
+
+            <div class="text-center m-t m-b"><a ui-sref="access.signup">Create new account</a> | <a ui-sref="access.signin">Sign in to access DIPS</a></div>
+
+        </form>
+    </div>
+    <div class="text-center" ng-include="$state.current.data.addonUrl + '/tpl/blocks/page_footer.html'"></div>
+</div>

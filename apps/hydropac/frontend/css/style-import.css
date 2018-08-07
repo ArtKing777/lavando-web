@@ -1,0 +1,72 @@
+
+/* Include Vendor folder */
+
+@import 'style.css';
+
+@import 'app.css';
+
+@import 'responsive.css';
+
+
+
+.btn-lavando {
+  color: #ffffff !important;
+  background-color: #beaa6e;
+  border-color: #beaa6e;
+}
+
+.btn-lavando:hover,
+.btn-lavando:focus,
+.btn-lavando:active,
+.btn-lavando.active,
+.open .dropdown-toggle.btn-lavando {
+  color: #ffffff !important;
+  background-color: #b8a261;
+  border-color: #b0984f;
+}
+
+.btn-lavando:active,
+.btn-lavando.active,
+.open .dropdown-toggle.btn-lavando {
+  background-image: none;
+}
+
+.btn-lavando.disabled,
+.btn-lavando[disabled],
+fieldset[disabled] .btn-lavando,
+.btn-lavando.disabled:hover,
+.btn-lavando[disabled]:hover,
+fieldset[disabled] .btn-lavando:hover,
+.btn-lavando.disabled:focus,
+.btn-lavando[disabled]:focus,
+fieldset[disabled] .btn-lavando:focus,
+.btn-lavando.disabled:active,
+.btn-lavando[disabled]:active,
+fieldset[disabled] .btn-lavando:active,
+.btn-lavando.disabled.active,
+.btn-lavando[disabled].active,
+fieldset[disabled] .btn-lavando.active {
+  background-color: #c0ac72;
+  border-color: #c0ac72;
+}
+
+.steps-indicator li.current a:before {
+    background-color: #beaa6e;
+}
+
+.steps-indicator li {
+    word-break: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

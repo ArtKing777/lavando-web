@@ -1,0 +1,704 @@
+<div class = "row">    
+    <div class="col-sm-6">
+		<div class="panel b-a">
+            <div class="panel-heading bg-info dk no-border wrapper-lg">
+              	<button class="btn btn-sm btn-icon btn-rounded btn-info pull-right m-r"><i class="fa fa-edit"></i></button>
+              	<button class="btn btn-sm btn-icon btn-rounded btn-info m-l"><i class="fa fa-envelope"></i></button>
+            </div>
+            <div class="text-center m-b clearfix">
+              	<div class="thumb-lg avatar m-t-n-xxl">
+                	<img src="{{helper.getProfilePic(tenant)}}" class="img-circle">                
+              	</div>
+                <div class="h4 font-thin m-t-sm">
+                	<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="first_name" 
+                		data-type="text"  
+                		data-pk="{{tenant.id}}" 
+                		data-name="first_name" 
+                		data-ng-model="tenant.first_name" 
+                		data-placement="bottom" 
+                		data-placeholder="FirstName" 
+                		data-emptytext = "First Name" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter First Name" 
+                		class="editable editable-click">
+                    	{{tenant.first_name}}
+					</a> 
+                 	<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="last_name" 
+                		data-type="text"  
+                		data-pk="{{tenant.id}}" 
+                		data-name="last_name" 
+                		data-ng-model="tenant.last_name" 
+                		data-placement="bottom" 
+                		data-placeholder="LastName" 
+                		data-emptytext = "Last Name" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Last Name" 
+                		class="editable editable-click">
+                    	{{tenant.last_name}}
+					</a>                 
+                 </div>
+                <small class="text-muted">
+                	<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="mobile_number" 
+                		data-type="text"  
+                		data-pk="{{tenant.id}}" 
+                		data-name="mobile_number" 
+                		data-ng-model="tenant.mobile_number" 
+                		data-placement="bottom" 
+                		data-placeholder="MobileNumber" 
+                		data-emptytext = "Mobile Number" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Mobile Number" 
+                		class="editable editable-click">
+                    	{{tenant.mobile_number}}
+					</a>
+                </small><br>
+                <small class="text-muted">
+                	<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="email" 
+                		data-type="email"  
+                		data-pk="{{tenant.id}}" 
+                		data-name="email" 
+                		data-ng-model="tenant.email" 
+                		data-placement="bottom" 
+                		data-placeholder="Email" 
+                		data-emptytext = "Email" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Email" 
+                		class="editable editable-click">
+                    	{{tenant.email}}
+					</a>
+                </small>
+            </div>
+            <div class="padder-v b-t b-light bg-light lter row text-center no-gutter">
+              	<div class="col-xs-4">
+                	<div>Date of Birth</div>
+                	<div class="inline m-t-sm">                  
+                    	<div>
+                      		<span class="step">
+                      			<a editable href="javascript:;" 
+                					data-url="backend/tenants/updatedata" 
+                					id="date_of_birth" 
+                					data-type="date"  
+                					data-format = "dd-M-yyyy"
+                					data-pk="{{tenant.id}}" 
+                					data-name="date_of_birth" 
+                					data-ng-model="tenant.date_of_birth" 
+                					data-placement="bottom" 
+                					data-placeholder="Date of Birth" 
+                					data-emptytext = "Date of Birth" 
+                					data-showbuttons="bottom" 
+                					data-original-title="Enter Date of Birth" 
+                					class="editable editable-click">
+                    				{{tenant.date_of_birth}}
+								</a>                      	
+                      		</span>
+                    	</div>                  
+                	</div>
+              	</div>
+              	<div class="col-xs-4">
+                	<div>Tenancy Type</div>
+                	<div class="inline m-t-sm">                  
+                    <div>
+                      	<span class="step">Student</span>
+                    </div>               
+                </div>
+             </div>
+             <div class="col-xs-4">
+                <div>Rent Share</div>
+                <div class="inline m-t-sm">                  
+                    <div>
+                      	<span class="step">
+	                      	<a editable href="javascript:;" 
+	                		data-url="backend/tenants/updatedata" 
+	                		id="rent_share" 
+	                		data-type="number"	                		
+	                		data-pk="{{tenant.id}}" 
+	                		data-name="rent_share" 
+	                		data-ng-model="tenant.rent_share" 
+	                		data-placement="bottom" 
+	                		data-placeholder="Rent Share" 
+	                		data-emptytext = "Rent Share" 
+	                		data-showbuttons="bottom" 
+	                		data-original-title="Enter Rent Share" 
+	                		class="editable editable-click">
+	                    		{{tenant.rent_share}}
+							</a>
+                      	</span>%
+                    </div>                  
+                </div>
+            </div>
+        </div>
+            <div class="hbox text-center b-t b-light">          
+              <div  class="col padder-v text-muted b-r b-light">                  
+                <div class="h4">Bank Details</div>
+                <span>
+					<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="bank_name" 
+                		data-type="text"	                		
+                		data-pk="{{tenant.id}}" 
+                		data-name="bank_name" 
+                		data-ng-model="tenant.bank_name" 
+                		data-placement="bottom" 
+                		data-placeholder="Bank Name" 
+                		data-emptytext = "Bank Name" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Bank Name" 
+                		class="editable editable-click">
+                    		{{tenant.bank_name}}
+					</a>
+				</span><br>
+                <span>
+					<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="bank_account_number" 
+                		data-type="text"	                		
+                		data-pk="{{tenant.id}}" 
+                		data-name="bank_account_number" 
+                		data-ng-model="tenant.bank_account_number" 
+                		data-placement="bottom" 
+                		data-placeholder="Bank Account Number" 
+                		data-emptytext = "Bank Account Number" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Bank Account Number" 
+                		class="editable editable-click">
+                    		{{tenant.bank_account_number}}
+					</a>
+				</span><br>
+                <span>
+					<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="bank_sort_code" 
+                		data-type="text"	                		
+                		data-pk="{{tenant.id}}" 
+                		data-name="bank_sort_code" 
+                		data-ng-model="tenant.bank_sort_code" 
+                		data-placement="bottom" 
+                		data-placeholder="Bank Sort Code" 
+                		data-emptytext = "Bank Sort Code" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Bank Sort Code" 
+                		class="editable editable-click">
+                    		{{tenant.bank_sort_code}}
+					</a>
+				</span><br>
+                <button class="btn btn-sm btn-icon btn-rounded btn-info m-t-xs"><i class="fa fa-edit"></i></button>
+              </div>
+              <div href="" class="col padder-v text-muted">
+                <div class="h4">Credit Details</div>
+                <span>as on 
+					<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="credit_check_date" 
+                		data-type="date"
+                		data-format = "dd-M-yyyy"	                		
+                		data-pk="{{tenant.id}}" 
+                		data-name="credit_check_date" 
+                		data-ng-model="tenant.credit_check_date" 
+                		data-placement="bottom" 
+                		data-placeholder="Credit Check Date" 
+                		data-emptytext = "Credit Check Date" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Credit Check Date" 
+                		class="editable editable-click">
+                    		{{tenant.credit_check_date}}
+					</a>
+				</span><br>
+                <span>
+					<a editable href="javascript:;" 
+                		data-url="backend/tenants/updatedata" 
+                		id="credit_check_details" 
+                		data-type="text"	                		
+                		data-pk="{{tenant.id}}" 
+                		data-name="credit_check_details" 
+                		data-ng-model="tenant.credit_check_details" 
+                		data-placement="bottom" 
+                		data-placeholder="Credit Report" 
+                		data-emptytext = "Credit Report" 
+                		data-showbuttons="bottom" 
+                		data-original-title="Enter Credit Report" 
+                		class="editable editable-click">
+                    		{{tenant.credit_check_details}}
+					</a>
+				</span><br>
+                <span>Download</span><br>
+                <button class="btn btn-sm btn-icon btn-rounded btn-info m-t-xs"><i class="fa fa-edit"></i></button>
+              </div>
+            </div>
+		</div>
+	</div>
+    
+      
+    <div class="col-md-6">
+		<div class="panel b-a">
+			<div class="panel-heading wrapper b-b b-light">
+				<span class="text-sm text-muted pull-right">              
+					<a  
+    				ng-bootbox-title="Add a Tenant Document"
+    				ng-bootbox-custom-dialog
+    				ng-bootbox-custom-dialog-template="{{data.addonUrl}}/tpl/add.document.html"
+    				ng-bootbox-options="documentDialogOptions">
+						<i class="fa fa-plus text-primary m-r-xs"></i> Add Document
+              		</a>  
+              	</span>
+              	<h4 class="font-thin m-t-none m-b-none text-muted">Documents</h4>              
+            </div>
+              
+			<!div class ="cell scrollable hover">
+				<!div class ="cell-inner">
+					<ul class="list-group list-group-lg m-b-none">
+						<li class="list-group-item"  ng-repeat="document in tenant.tenantDocuments">
+							<div class="row">
+                				<div class="col-md-1">
+                    				<i class="fa fa-check-circle-o fa-2x text-success"></i>
+                				</div>
+                				<div class="col-md-10">
+                					<span>
+                						<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantDocumentData" 
+					                		id="name" 
+					                		data-type="text"
+					                		data-pk="{{document.id}}" 
+					                		data-name="name" 
+					                		data-ng-model="document.name" 
+					                		data-placement="bottom" 
+					                		data-placeholder="Title" 
+					                		data-emptytext = "Title" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter Title" 
+					                		class="editable editable-click">
+					                    	{{document.name}}
+										</a>
+                					</span><br>
+                					<span>
+                						<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantDocumentData" 
+					                		id="remark" 
+					                		data-type="text"
+					                		data-pk="{{document.id}}" 
+					                		data-name="remark" 
+					                		data-ng-model="document.remark" 
+					                		data-placement="bottom" 
+					                		data-placeholder="Remark" 
+					                		data-emptytext = "Remark" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter Remark" 
+					                		class="editable editable-click">
+					                    	{{document.remark}}
+										</a>
+                					</span><br>
+                					<small class="text-muted">as on 
+	                					<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantDocumentData" 
+					                		id="file_date" 
+					                		data-type="date"  
+					                		data-format = "dd-M-yyyy"
+					                		data-pk="{{document.id}}" 
+					                		data-name="file_date" 
+					                		data-ng-model="document.file_date" 
+					                		data-placement="bottom" 
+					                		data-placeholder="File Date" 
+					                		data-emptytext = "File Date" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter File Date" 
+					                		class="editable editable-click">
+					                    	{{document.file_date}}
+										</a>
+                					</small>
+                				</div>
+                				<div class="col-md-1">
+                    				<a href="" class = "pull-right">
+                    					<i class="fa fa-download text-info"></i>
+                    				</a><br>
+                    				<a href="" class = "pull-right">
+                    					<i class="fa  fa-times text-danger"></i>
+                    				</a><br>
+                    				<a href="" class = "pull-right">
+                    					<i class="fa fa-check text-success"></i>
+                    				</a>
+								</div>
+          					</div>
+						</li>
+					</ul>
+				<!/div>
+			<!/div>
+		</div>
+	</div>
+</div>
+
+<div class = "row">    
+	<div class="col-md-6">
+		<div class="panel b-a">
+			<div class="panel-heading wrapper b-b b-light">
+              	<span class="text-sm text-muted pull-right">
+					<a  
+    				ng-bootbox-title="Add a Tenant Address"
+    				ng-bootbox-custom-dialog
+    				ng-bootbox-custom-dialog-template="{{data.addonUrl}}/tpl/add.address.html"
+    				ng-bootbox-options="addressDialogOptions">
+						<i class="fa fa-plus text-primary m-r-xs"></i> Add Address
+              		</a>  
+				</span>
+              	<h4 class="font-thin m-t-none m-b-none text-muted">Addresses</h4>              
+            </div>
+              
+			<!div class ="cell scrollable hover">
+				<!div class ="cell-inner">
+            		<ul class="list-group list-group-lg m-b-none">
+ 						<li class="list-group-item"  ng-repeat="address in tenant.tenantAddresses">
+							<div class="row">
+                				<div class="col-md-1">
+                    				<i class="fa fa-check-circle-o fa-2x text-success"></i>
+                				</div>
+                				<div class="col-md-10">
+                					<span>
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="address1" 
+					                		data-type="text"  
+					                		data-pk="{{address.id}}" 
+					                		data-name="address1" 
+					                		data-ng-model="address.address1" 
+					                		data-placement="bottom" 
+					                		data-placeholder="Address Line 1" 
+					                		data-emptytext = "Address Line 1" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter Address Line 1" 
+					                		class="editable editable-click">
+					                    	{{address.address1}}
+										</a>
+									</span><br>
+                					<span>
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="address2" 
+					                		data-type="text"  
+					                		data-pk="{{address.id}}" 
+					                		data-name="address2" 
+					                		data-ng-model="address.address2" 
+					                		data-placement="bottom" 
+					                		data-placeholder="Address Line 2" 
+					                		data-emptytext = "Address Line 2" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter Address Line 2" 
+					                		class="editable editable-click">
+					                    	{{address.address2}}
+										</a>
+									</span><br>
+                					<span>
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="city" 
+					                		data-type="text"  
+					                		data-pk="{{address.id}}" 
+					                		data-name="city" 
+					                		data-ng-model="address.city" 
+					                		data-placement="bottom" 
+					                		data-placeholder="City" 
+					                		data-emptytext = "City" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter City" 
+					                		class="editable editable-click">
+					                    	{{address.city}}
+										</a>
+										 <a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="state" 
+					                		data-type="text"  
+					                		data-pk="{{address.id}}" 
+					                		data-name="state" 
+					                		data-ng-model="address.state" 
+					                		data-placement="bottom" 
+					                		data-placeholder="County" 
+					                		data-emptytext = "County" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter County" 
+					                		class="editable editable-click">
+					                    	{{address.city}}
+										</a>
+									</span><br>
+                					<span>
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="country" 
+					                		data-type="text"  
+					                		data-pk="{{address.id}}" 
+					                		data-name="country" 
+					                		data-ng-model="address.country" 
+					                		data-placement="bottom" 
+					                		data-placeholder="Country" 
+					                		data-emptytext = "Country" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter Country" 
+					                		class="editable editable-click">
+					                    	{{address.country}}
+										</a> 
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="postcode" 
+					                		data-type="text"  
+					                		data-pk="{{address.id}}" 
+					                		data-name="postcode" 
+					                		data-ng-model="address.postcode" 
+					                		data-placement="bottom" 
+					                		data-placeholder="Postcode" 
+					                		data-emptytext = "Postcode" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter Postcode" 
+					                		class="editable editable-click">
+					                    	{{address.postcode}}
+										</a> 
+									</span><br>
+                					<small class="text-muted">from 
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="from_date" 
+					                		data-type="date"  
+					                		data-format="dd-M-yyyy"
+					                		data-pk="{{address.id}}" 
+					                		data-name="from_date" 
+					                		data-ng-model="address.from_date" 
+					                		data-placement="bottom" 
+					                		data-placeholder="From Date" 
+					                		data-emptytext = "From Date" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter From Date" 
+					                		class="editable editable-click">
+					                    	{{address.from_date}}
+										</a> 
+									 to 
+										<a editable href="javascript:;" 
+					                		data-url="backend/tenants/updateTenantAddressData" 
+					                		id="to_date" 
+					                		data-type="date"  
+					                		data-format="dd-M-yyyy"
+					                		data-pk="{{address.id}}" 
+					                		data-name="to_date" 
+					                		data-ng-model="address.to_date" 
+					                		data-placement="bottom" 
+					                		data-placeholder="To Date" 
+					                		data-emptytext = "To Date" 
+					                		data-showbuttons="bottom" 
+					                		data-original-title="Enter To Date" 
+					                		class="editable editable-click">
+					                    	{{address.to_date}}
+										</a> 
+									</small>
+                				</div>
+                				<div class="col-md-1">
+                    				<a href="" class = "pull-right">
+                    					<i class="fa fa-edit text-info"></i>
+                    				</a><br>
+                    				<a href="" class = "pull-right">
+                    					<i class="fa  fa-times text-danger"></i>
+                    				</a><br>
+                    				<a href="" class = "pull-right">
+                    					<i class="fa fa-check text-success"></i>
+                    				</a>
+								</div>
+          					</div>
+						</li>
+					</ul>
+				<!/div>
+			<!/div>
+		</div>
+	</div>
+    
+ 	<div class="col-md-6">
+		<div class="panel b-a">
+			<div class="panel-heading wrapper b-b b-light">
+				<span class="text-sm text-muted pull-right">
+              		<a  
+    				ng-bootbox-title="Add a Tenant Employment"
+    				ng-bootbox-custom-dialog
+    				ng-bootbox-custom-dialog-template="{{data.addonUrl}}/tpl/add.employment.html"
+    				ng-bootbox-options="employmentDialogOptions">
+    					<i class="fa fa-plus text-primary m-r-xs"></i> Add Employment
+              		</a>  
+				</span>
+              	<h4 class="font-thin m-t-none m-b-none text-muted">Employments</h4>              
+            </div>
+            
+            <ul class="list-group list-group-lg m-b-none">
+ 				<li class="list-group-item" ng-repeat="employment in tenant.tenantEmployments">
+					<div class="row">
+                		<div class="col-md-1">
+                    		<i class="fa fa-check-circle-o fa-2x text-success"></i>
+                		</div>
+                		<div class="col-md-10">
+                			<span>
+                				<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="company_name" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="company_name" 
+			                		data-ng-model="employment.company_name" 
+			                		data-placement="bottom" 
+			                		data-placeholder="Company Name" 
+			                		data-emptytext = "Company Name" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter Company Name" 
+			                		class="editable editable-click">
+			                    	{{employment.company_name}}
+								</a> 
+                			</span><br>
+                			<span>
+                				<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="address1" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="address1" 
+			                		data-ng-model="employment.address1" 
+			                		data-placement="bottom" 
+			                		data-placeholder="Address 1" 
+			                		data-emptytext = "Address 1" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter Adress1" 
+			                		class="editable editable-click">
+			                    	{{employment.address1}}
+								</a> 
+                			</span><br>
+                			<span>
+                				<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="address2" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="address2" 
+			                		data-ng-model="employment.address2" 
+			                		data-placement="bottom" 
+			                		data-placeholder="Address 2" 
+			                		data-emptytext = "Address 2" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter Adress2" 
+			                		class="editable editable-click">
+			                    	{{employment.address2}}
+								</a> 
+                			</span><br>
+                			<span>
+                				<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="city" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="city" 
+			                		data-ng-model="employment.city" 
+			                		data-placement="bottom" 
+			                		data-placeholder="City" 
+			                		data-emptytext = "City" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter City" 
+			                		class="editable editable-click">
+			                    	{{employment.city}}
+								</a> 
+                			 	<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="state" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="state" 
+			                		data-ng-model="employment.state" 
+			                		data-placement="bottom" 
+			                		data-placeholder="State" 
+			                		data-emptytext = "State" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter State" 
+			                		class="editable editable-click">
+			                    	{{employment.state}}
+								</a> 
+								
+								<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="country" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="country" 
+			                		data-ng-model="employment.country" 
+			                		data-placement="bottom" 
+			                		data-placeholder="Country" 
+			                		data-emptytext = "Country" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter Country" 
+			                		class="editable editable-click">
+			                    	{{employment.country}}
+								</a> 
+								
+								<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="postcode" 
+			                		data-type="text"  
+			                		data-pk="{{employment.id}}" 
+			                		data-name="postcode" 
+			                		data-ng-model="employment.postcode" 
+			                		data-placement="bottom" 
+			                		data-placeholder="Postcode" 
+			                		data-emptytext = "Postcode" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter Postcode" 
+			                		class="editable editable-click">
+			                    	{{employment.postcode}}
+								</a>
+
+							</span><br>
+                			<small class="text-muted">from 
+                				<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="from_date" 
+			                		data-type="date"  
+			                		data-format = "dd-M-yyyy"
+			                		data-pk="{{employment.id}}" 
+			                		data-name="from_date" 
+			                		data-ng-model="employment.from_date" 
+			                		data-placement="bottom" 
+			                		data-placeholder="From Date" 
+			                		data-emptytext = "From Date" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter From Date" 
+			                		class="editable editable-click">
+			                    	{{employment.from_date}}
+								</a>
+                			 to 
+                			 	<a editable href="javascript:;" 
+			                		data-url="backend/tenants/updateTenantEmploymentData" 
+			                		id="to_date" 
+			                		data-type="date"  
+			                		data-format = "dd-M-yyyy"
+			                		data-pk="{{employment.id}}" 
+			                		data-name="to_date" 
+			                		data-ng-model="employment.to_date" 
+			                		data-placement="bottom" 
+			                		data-placeholder="To Date" 
+			                		data-emptytext = "To Date" 
+			                		data-showbuttons="bottom" 
+			                		data-original-title="Enter To Date" 
+			                		class="editable editable-click">
+			                    	{{employment.to_date}}
+								</a>
+                			 </small>
+                		</div>
+                		<div class="col-md-1">
+                    		<a href="" class = "pull-right">
+                    			<i class="fa fa-edit text-info"></i>
+                    		</a><br>
+                    		<a href="" class = "pull-right">
+                    			<i class="fa  fa-times text-danger"></i>
+                    		</a><br>
+                    		<a href="" class = "pull-right">
+                    			<i class="fa fa-check text-success"></i>
+                    		</a>
+                    	</div>
+          			</div>
+                </li>
+			</ul>
+		</div>
+	</div>
+</div>

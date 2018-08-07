@@ -1,0 +1,70 @@
+<!-- list -->
+<ul class="nav">
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.HEADER">My Dashboard</span>
+    </li>
+
+    <li ui-sref-active="active">
+        <a ui-sref="{{authData.userType.tplkey}}.dashboard">
+        <i class="glyphicon glyphicon-stats icon text-info-dker"></i>
+        <span class="font-bold" translate="aside.nav.DASHBOARD">Dashboard</span>
+        </a>
+    </li>
+
+    <li class="line dk"></li>
+    
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.MANAGE_SITE">Manage System</span>
+    </li>
+    
+    <li ui-sref-active="active">
+        <a ui-sref="{{authData.userType.tplkey}}.properties.list">
+        <i class="fa fa-user icon text-info-lter"></i>
+        <span class="font-bold" translate="aside.nav.Customers">Customers</span>
+        </a>
+    </li>
+    
+    <li ui-sref-active="active">
+        <a ui-sref="{{authData.userType.tplkey}}.tenancies.list">
+        <i class="fa fa-user icon text-info-lter"></i>
+        <span class="font-bold" translate="aside.nav.Jobs">Jobs</span>
+        </a>
+    </li>    
+    
+    <li class="line dk"></li>
+
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.your_stuff.YOUR_STUFF">Your Stuff</span>
+    </li>
+
+    <li>
+        <a ui-sref="{{authData.userType.tplkey}}.users.list">
+        <i class="fa fa-gear icon text-info-lter"></i>
+        <span translate="aside.nav.your_stuff.USERS">Users</span>
+        </a>
+    </li>
+    
+    <li>
+        <a  ui-sref="{{authData.userType.tplkey}}.profile.view">
+        <i class="fa fa-gear icon text-info-lter"></i>
+        <span translate="aside.nav.your_stuff.PROFILE">Profile</span>
+        </a>
+    </li>
+
+    <li>
+        <a  ng-click="logout()">
+        <i class="fa fa-gear icon text-info-lter"></i>
+        <span translate="aside.nav.your_stuff.LOGOUT">Logout</span>
+        </a>
+    </li>
+
+    <!--
+    <li>
+        <a>
+        <i class="icon-question icon"></i>
+        <span translate="aside.nav.your_stuff.DOCUMENTS">Documents</span>
+        </a>
+    </li>
+    -->
+</ul>
+<!-- / list -->

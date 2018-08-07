@@ -1,0 +1,216 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            {{heading}}
+        </div>
+
+        <div class="panel-body">
+            <form class="form-horizontal form-validation" name="frmAdd">
+       
+                <div class = "row">
+                    <div class="col-sm-8">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-6" ng-class="{'has-error': frmAdd.first_name.$invalid }">
+                                        <input required type="text" name = "first_name" ng-model = "advisor.first_name" class="form-control" placeholder="First Name" >
+                                    </div>
+                                    <div class="col-md-6" ng-class="{'has-error': frmAdd.last_name.$invalid }">
+                                        <input required type="text" name = "last_name" ng-model = "advisor.last_name" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="line line-dashed b-b line-lg pull-in"></div>                
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Work Details</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-8" ng-class="{'has-error': frmAdd.company_name.$invalid }">
+                                        <input required type="text" name = "company_name" ng-model = "advisor.company_name" class="form-control" placeholder="Company Name" required>
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': frmAdd.designation.$invalid }">
+                                        <input required type="text" name = "designation" ng-model = "advisor.designation" class="form-control" placeholder="Job Title" >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Contact details</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group" ng-class="{'has-error': frmAdd.mobile_number.$invalid }">
+                                            <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                            <input required type="text" class="form-control" name = "mobile_number" ng-model = "advisor.mobile_number" placeholder="Mobile">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                            <input type="text" ng-model = "advisor.work_phone" class="form-control" placeholder="Work Phone">
+                                        </div>
+                                    </div>
+
+                                </div>   
+                            </div>
+                        </div>
+
+                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Website</label>
+                            <div class="col-sm-9">
+                                <div class="row">
+                                    <div class="col-md-6" ng-class="{'has-error': frmAdd.email.$invalid }">
+                                        <div class="input-group" ng-class="{'has-error': frmAdd.email.$invalid }">
+                                            <span class="input-group-addon"><i class="icon-envelope"></i></span>
+                                            <input required type="email" name = "email" ng-model = "advisor.email" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">http://</span>
+                                            <input type="text" ng-model = "advisor.url" class="form-control" placeholder="Website">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line line-dashed b-b line-lg pull-in"></div>         
+                    </div>
+                
+                    <div class="col-sm-4">
+                        <div class="row m-b">
+                            <div class="col-md-8 col-md-offset-2">
+                                <wp-img-uploader ng-model = "advisor.profile_image" data-size = "210x160"></wp-img-uploader>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Bio</label>
+                    <div class="col-sm-9">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <textarea ui-tinymce="tinymceOptions" class="form-control" ng-model = "advisor.bio" rows="12" placeholder="Bio"></textarea>
+                            </div>                            
+                        </div> 
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+               
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Mailing address</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "advisor.address1" class="form-control" placeholder="Address Line 1">
+                            </div>                           
+                        </div>
+                        <div class="row m-b">
+                            <div class="col-md-12">
+                                <input type="text" ng-model = "advisor.address2" class="form-control" placeholder="Address Line 2">
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" ng-model = "advisor.city" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col-md-4" ng-class="{'has-error': frmAdd.state.$invalid }">
+                                <input required type="text" name = "state" ng-model = "advisor.state" class="form-control" placeholder="State">
+                            </div>
+                             <div class="col-md-4">
+                                <input type="text" ng-model = "advisor.postcode" class="form-control" placeholder="Postcode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Social details</label>
+                    <div class="col-sm-8">
+                        <div class="row m-b">                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-skype"></i></span>
+                                    <input type="text" ng-model = "advisor.skype_handel" class="form-control" placeholder="Skype">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-social-dropbox"></i></span>
+                                    <input type="email" ng-model = "advisor.dropbox_email" class="form-control" placeholder="Dropbox">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-google-plus"></i></span>
+                                    <input type="text" ng-model = "advisor.google_plus_handel" class="form-control" placeholder="Google+">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">     
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-social-facebook"></i></span>
+                                    <input type="text" ng-model = "advisor.facebook_handel" class="form-control" placeholder="Facebook">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon-social-twitter"></i></i></span>
+                                    <input type="text" ng-model = "advisor.twitter_handel" class="form-control" placeholder="Twitter">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-linkedin"></i></span>
+                                    <input type="text" ng-model = "advisor.linkedin_handel" class="form-control" placeholder="Linked In">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Active / Deactive</label>
+                    <div class="col-sm-10">
+                        <label class="i-switch m-t-xs m-r">
+                            <input type="radio" ng-model = "advisor.status_id" name="switch" checked="" value = 1>
+                            <i></i>
+                        </label>
+                        <label class="i-switch bg-danger m-t-xs m-r">
+                            <input type="radio" ng-model = "advisor.status_id" name="switch" value = 2>
+                            <i></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="button" ng-click = "helper.goPeer('.list')" class="btn btn-default">Cancel</button>
+                        <button type="submit" ng-click = "helper.save('advisors/save', advisor)" class="btn btn-primary" ng-disabled="frmAdd.$invalid">Save changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
