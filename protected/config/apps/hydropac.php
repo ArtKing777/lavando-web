@@ -107,12 +107,12 @@ return CMap::mergeArray(
                         'frontend.access'                        
                     ),
                     "libs" => array('common', 'jquery', 'bootstrap', 'font-awesome', 'angular', 
-                                'moment', 'x-editable', 'angular-animate',
+                                'moment', '!x-editable', 'angular-animate',
                                 'angular-cookies', 'angular-resource', 'angular-sanitize', 'angular-touch', 'angular-ui-utils',
-                                'angular-jwt', 'angular-datatables', 'ng-file-upload', 'AngularJS-Toaster',
-                                'ngflow', 'angular-ui-router', 'ngstorage', 'angular-bootstrap', 'angular-ui-validate',
-                                'oclazyload', 'angular-translate', 'angular-daterangepicker', '!angular-date-time-input', '!angular-bootstrap-datetimepicker', 'angular-ui-tinymce', 'ngmap', 'ngbootbox',
-                                'ngjstree', 'bootstrap-ui-datetime-picker', 'angular-wizard', 'angular-lock', 'angular-auth0')
+                                'angular-jwt', 'angular-datatables', '!ng-file-upload', 'AngularJS-Toaster',
+                                '!ngflow', 'angular-ui-router', 'ngstorage', 'angular-bootstrap', '!angular-ui-validate',
+                                'oclazyload', 'angular-translate', '!angular-daterangepicker', '!angular-date-time-input', '!angular-bootstrap-datetimepicker', '!angular-ui-tinymce', '!ngmap', '!ngbootbox',
+                                '!ngjstree', '!bootstrap-ui-datetime-picker', 'angular-wizard', 'angular-lock', 'angular-auth0')
                     
                 )
             ),

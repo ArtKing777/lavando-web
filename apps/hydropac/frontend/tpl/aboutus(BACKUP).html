@@ -54,7 +54,7 @@
         						<input type="text" style = "height:50px;" placeholder = "POSTCODE" style = "outline: none;" class="form-control" ng-model="register.postcode" ng-pattern="/^([Gg][Ii][Rr] 0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2})/" required >
       						</div>
         				    
-        				    <button type="submit"  style = "height:50px;"  wz-next="GotoStep2()"  class="btn btn-lavando" ng-disabled="form.$invalid">COLLECT MY CLOTHES</button>
+        				    <button type="submit"  style = "height:50px;"  wz-next="GotoStep2()"  class="btn btn-lavando" ng-disabled="form.$invalid">PLACE AN ORDER ONLINE</button>
         				    
         				    <!--
         				    
@@ -417,11 +417,12 @@ No problem. We’ll send instructions on how to reset it to your email:</p>
 				<div class="row mobile-space">
       				<div class="col-md-6 col-md-offset-3 m-t-lg ">
         				<form name="form" class="form-validation">
-							<h5 class = "text-center m-b-md m-t-md">Enter your card details, tap "Place Order" and a driver will be sent to collect your clothes immediately.</h5>
-							<h5 class = "text-center m-b-md m-t-md">We’ll sort your clothes on your behalf and provide an itemised invoice. Please note, there is a £30 minimum order.</h5>
+							<h5 class = "text-center m-b-md m-t-md">We’ll sort your clothes and seek approval before any items not on our price list are cleaned. Please note, there is a £30 minimum order.</h5>
+							<p class = "h3 m-t text-center">Confirm your order and we’ll send a driver straight to you. The driver will arrive within 60 mins from clicking ‘Place Order’. Please place your clothes in a bag beforehand.</p>
+
 							<p class = "h3 m-t text-center" ng-hide = "true">Lavando will send a valet to your door immediately upon placing an order. Expect a knock on your door within 60 minutes.</p>
 
-        				    <h5 class = "text-center m-b-md m-t-md" ng-hide = "true">Please enter your card details:</h5>
+        				    <h5 class = "text-center m-b-md m-t-md">Please enter your card details:</h5>
         				    <div class="form-group">
                 						<label>Card Number</label>
                 						<input type="text" class="form-control" ng-model="register.card_number" ng-pattern="/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/" required >
@@ -476,7 +477,7 @@ No problem. We’ll send instructions on how to reset it to your email:</p>
     								<div class = "row m-b-md" ng-hide = "true">
     									<div class="col-sm-12">
     										
-    										<p class = "h3 m-t text-center">We'll sort your clothes for you and will seek your approval for any items which are not included in our price list (fur coats, leather etc.)</p>
+    										<p class = "h3 m-t text-center">We'll sort your clothes for you and will seek your approval for any items which are  not included in our price list (fur coats, leather etc.)</p>
     										<p class="h3 m-t text-center">Please note there is a &pound;30 minimum order.</h4>
     									</div>
     									
@@ -486,7 +487,7 @@ No problem. We’ll send instructions on how to reset it to your email:</p>
     									<div class="col-sm-12">
     									    <label class="checkbox-inline">
     									        <p>
-    										<input type = "checkbox" ng-model = "iagree"> I accept the <a style = "color:blue;" target = "_new" href = "http://lavandodrycleaning.com/terms-conditions/">Lavando Terms & Conditions</a>. We will never share your contact details with third parties.</label></p>
+    										<input type = "checkbox" ng-model = "iagree"> I accept the <a style = "color:blue;" target = "_new" href = "http://lavandodrycleaning.com/terms-conditions/">Lavando Terms & Conditions</a>.</label></p>
     									</div>
     									
     								</div>
@@ -529,10 +530,10 @@ No problem. We’ll send instructions on how to reset it to your email:</p>
         				    
         				    <div class = "row">
     									<div class="col-sm-12">
-    										<p class = "h5 m-t text-center">Thanks for your order. A driver is on the way and will be at your door within 60 mins.</p>
-    										<p class = "h5 m-t text-center">Please put your clothes in a bag ready for collection.</p>
-    										<p class = "h5 m-t text-center">We'll clean your clothes and in 3 days timel you'll receive an email letting you request delivery. If you need your items back sooner or have special care instructions, send us an email to us (support@lavandodrycleaning.com) or speak to us using the live chat.</p>
-    										<p class = "h5 m-t text-center">Download the Lavando app to track your order in real time.</p>
+    										<p class = "h3 m-t text-center">Thanks for your order.</p>
+    										<p class = "h3 m-t text-center">A driver is on their way to your door.</p>
+    										<p class = "h3 m-t text-center">Please let us know if you have any questions.</p>
+    										<p class = "h3 m-t text-center">Want to see your driver in real time? Download the Lavando App now using the links below:</p>
     									</div>
     								</div>
     								<div class = "row m-t">

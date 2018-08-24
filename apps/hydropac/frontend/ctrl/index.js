@@ -20,7 +20,7 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 	$scope.userProfile = {};
 	$scope.register = {};
 	$scope.addresses = [];
-	$scope.signupCaption = "CONTINUE";
+	$scope.signupCaption = "Sign Up";
 	$scope.signupEnabled = true;
 	
 	$scope.forgotCaption = "RESET PASSWORD";
@@ -131,7 +131,7 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 			password: password
 		}, function (err) {
 	    	 if (err){	        	  
-	    		 $scope.signupCaption = "CONTINUE";
+	    		 $scope.signupCaption = "Sign Up";
 	    		 $scope.signupEnabled = true;
 	  				
 	    		 if (err.code == 'user_exists'){

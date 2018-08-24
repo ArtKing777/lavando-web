@@ -39,8 +39,8 @@ var deps = [
     'pascalprecht.translate',
     'angular-jwt',    
     'toaster',
-    'datatables',
-    'datatables.bootstrap',
+    // 'datatables',
+    // 'datatables.bootstrap',
     'mgo-angular-wizard',
     // 'auth0.lock',
     'auth0.auth0',
@@ -64,8 +64,8 @@ var deps = [
     */
    
     
-    'ngFileUpload',   
-    'ngBootbox'   
+    // 'ngFileUpload',   
+    // 'ngBootbox'   
 ];
 
 angular.module('app', deps.concat(subModules));

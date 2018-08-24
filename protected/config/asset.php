@@ -27,7 +27,7 @@ return array(
     ),
     
     "frontend" => array(
-        AssetHelper::LocalURL('/frontend/app.js'),
+        AssetHelper::LocalURL('/frontend/app1.js'),
         AssetHelper::LocalURL('/frontend/ctrl/ctrl.js'),
     ),
     
