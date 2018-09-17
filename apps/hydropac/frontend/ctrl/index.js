@@ -685,14 +685,27 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 	}
 	
 	
-	$scope.GotoStep2 = function(){	
+	$scope.GotoStep2 = function(){
+		console.log('postcode continue clicked');
+		ga('send', {
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'Collect My Clothes.',
+			eventLabel: 'Web Booking'
+		});
 		localStorage.setItem('postcode', $scope.register.postcode);
 		$scope.refreshUserInfo();
 		$scope.refreshAddresses();
 	}
 	
 	$scope.GotoStep3 = function(){
-		
+		console.log('detail continue clicked');
+		ga('send', {
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'Continue Details',
+			eventLabel: 'Web Booking'
+		});
 	}
 	
 	$scope.GotoStep4 = function(){
@@ -701,11 +714,17 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 	
 	
 	$scope.GotoStep5 = function(){
+		ga('send', {
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'Place Order (Payment)',
+			eventLabel: 'Web Booking'
+		});
 		$scope.finishCaption = "PLEASE WAIT ...";
 		$scope.finishEnabled = false;
 		
 		
-		$scope.SACreateStripePaymentMethod();		
+		$scope.SACreateStripePaymentMethod();
 	}
 	
 	$scope.refreshUserInfo();
