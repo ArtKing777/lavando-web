@@ -72,5 +72,15 @@ AssetHelper::addRouters(Helper::YiiParam()['modules']['frontend']['addons'],"js"
 
   ga('create', 'UA-100820335-2', 'none');
 </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100820335-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100820335-2');
+</script>
 </body>
 </html>

@@ -4,17 +4,17 @@ class DefaultController extends WSModuleController
     
     public function actionGetToken(){
         
-        $url = 'http://www.google-analytics.com/collect';
-        $params = 'v=1&t=event&tid=UA-100820335-2&cid=555&ec=Button&ea=Place%20Order(Payment)&el=Web%20Booking';
+        // $url = 'http://www.google-analytics.com/collect';
+        // $params = 'v=1&t=event&tid=UA-100820335-2&cid=555&ec=Button&ea=Place%20Order(Payment)&el=Web%20Booking';
 
-        $ch = curl_init( $url );
-        curl_setopt( $ch, CURLOPT_POST, 1);
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, $params);
-        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt( $ch, CURLOPT_HEADER, 0);
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+        // $ch = curl_init( $url );
+        // curl_setopt( $ch, CURLOPT_POST, 1);
+        // curl_setopt( $ch, CURLOPT_POSTFIELDS, $params);
+        // curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+        // curl_setopt( $ch, CURLOPT_HEADER, 0);
+        // curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
-        $response = curl_exec( $ch );
+        // $response = curl_exec( $ch );
         
         $postdata = file_get_contents("php://input");
         $param = json_decode($postdata, true);
@@ -109,26 +109,26 @@ class DefaultController extends WSModuleController
     }
     
     public function actionSearchAddresses(){
-        $url = 'http://www.google-analytics.com/collect';
-        $paramss = array(
-            'v' => 1, // Version
-            'tid' => 'UA-100820335-2', // Tracking ID
-            'cid' => 555, // Anonymous Client ID.
-            't' => 'event', // hit type
-            'ec' => 'Button', // category
-            'ea' => 'Collect', // action
-            'el' => 'Web Booking', // label
-        );
-        $params = 'v=1&t=event&tid=UA-100820335-2&cid=555&ec=Button&ea=Collect&el=Web%20Booking';
+        // $url = 'http://www.google-analytics.com/collect';
+        // $paramss = array(
+        //     'v' => 1, // Version
+        //     'tid' => 'UA-100820335-2', // Tracking ID
+        //     'cid' => 555, // Anonymous Client ID.
+        //     't' => 'event', // hit type
+        //     'ec' => 'Button', // category
+        //     'ea' => 'Collect', // action
+        //     'el' => 'Web Booking', // label
+        // );
+        // $params = 'v=1&t=event&tid=UA-100820335-2&cid=555&ec=Button&ea=Collect&el=Web%20Booking';
 
-        $ch = curl_init( $url );
-        curl_setopt( $ch, CURLOPT_POST, 1);
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, $params);
-        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt( $ch, CURLOPT_HEADER, 0);
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
+        // $ch = curl_init( $url );
+        // curl_setopt( $ch, CURLOPT_POST, 1);
+        // curl_setopt( $ch, CURLOPT_POSTFIELDS, $params);
+        // curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+        // curl_setopt( $ch, CURLOPT_HEADER, 0);
+        // curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
-        $response = curl_exec( $ch );
+        // $response = curl_exec( $ch );
         
         $postdata = file_get_contents("php://input");
         $param = json_decode($postdata, true);

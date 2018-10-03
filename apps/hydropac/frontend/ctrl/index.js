@@ -686,13 +686,14 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 	
 	
 	$scope.GotoStep2 = function(){
-		console.log('postcode continue clicked');
+		console.log('postcode continue clicked..');
 		ga('send', {
 			hitType: 'event',
 			eventCategory: 'Button',
 			eventAction: 'Collect My Clothes.',
 			eventLabel: 'Web Booking'
 		});
+		gtag('event', 'Collect My Clothes..');
 		localStorage.setItem('postcode', $scope.register.postcode);
 		$scope.refreshUserInfo();
 		$scope.refreshAddresses();
@@ -720,6 +721,7 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 			eventAction: 'Place Order (Payment)',
 			eventLabel: 'Web Booking'
 		});
+		gtag('event', 'Place Order (Payment)..');
 		$scope.finishCaption = "PLEASE WAIT ...";
 		$scope.finishEnabled = false;
 		
