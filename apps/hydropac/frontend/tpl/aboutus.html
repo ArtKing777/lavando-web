@@ -94,7 +94,7 @@
 	      							    <h4 class = "text-center m-b" style = "color:#beaa6e">Sign Up</h4>
       							    
       							    <h5 class = "text-center m-b-md">If
-you’re new please create and account or 
+you’re new please create an account or 
 <a ng-click = "register.authScreen = 'login'" class = "text-primary">Log In</a> to your
 existing account.</h5>
 	      							    
@@ -304,7 +304,7 @@ No problem. We’ll send instructions on how to reset it to your email:</p>
              						<div class="form-group">
               							<label>Address</label>
               							<ui-select on-select="selectAddress($item, $model)" required name = "address" ng-model="register.address" theme="bootstrap" >
-		                                    <ui-select-match placeholder="Select or search a adress in the list...">{{$select.selected.Text}}</ui-select-match>
+		                                    <ui-select-match placeholder="Select your address">{{$select.selected.Text}}</ui-select-match>
 		                                    <ui-select-choices repeat="add.Id as add in addresses | filter: $select.search"  refresh="refreshAddresses($select.search)">
 		                                        <div ng-bind-html="add.Text | highlight: $select.search"></div>
 											</ui-select-choices>
