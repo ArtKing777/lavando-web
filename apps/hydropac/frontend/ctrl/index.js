@@ -687,7 +687,7 @@ app.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location', 't
 	
 	
 	$scope.GotoStep2 = function(){
-		console.log('postcode continue clicked?');
+		console.log('postcode continue clicked??');
 		ga('send', {
 			hitType: 'event',
 			eventCategory: 'Button',
